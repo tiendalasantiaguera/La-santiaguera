@@ -4,44 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Santiaguera | Tienda Online</title>
-    <!-- LOGO EN LA PESTAÑA (FAVICON) -->
-    <link rel="icon" type="image/png" href="img/logo.png"> 
     
+    <!-- LOGO PARA GOOGLE Y NAVEGADORES -->
+    <link rel="icon" type="image/png" href="img/logo.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="img/logo.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Pega aquí la etiqueta de verificación de Google Search Console cuando la tengas -->
+    <!-- <meta name="google-site-verification" content="TU_CODIGO_AQUI" /> -->
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* ESTILO MINIMALISTA */
+        /* ESTILO MINIMALISTA "FLAT" */
         *{margin:0;padding:0;box-sizing:border-box}
         :root{--text:#333;--accent:#e74c3c;--bg:#fff;--gray:#f5f5f5}
         body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.5}
         a{text-decoration:none;color:inherit}
         .container{max-width:1200px;margin:0 auto;padding:0 20px}
         
-        /* HEADER */
-        header{background:#fff;position:sticky;top:0;z-index:1000;padding:15px 0;border-bottom:1px solid #eee;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
+        /* HEADER LIMPIO */
+        header{background:#fff;position:sticky;top:0;z-index:1000;padding:20px 0;border-bottom:1px solid #eee}
         .header-grid{display:flex;justify-content:space-between;align-items:center;gap:20px}
-        .logo{font-size:24px;font-weight:700;letter-spacing:-0.5px;color:var(--text);display:flex;align-items:center;gap:10px}
-        .logo img{height:40px;width:auto} /* Estilo para el logo imagen */
         
-        /* BUSCADOR */
+        .logo{font-size:24px;font-weight:700;letter-spacing:-0.5px;color:var(--text);display:flex;align-items:center;gap:10px}
+        .logo img{height:40px;width:auto}
+        .logo span{color:var(--accent)}
+        
+        /* BUSCADOR SIMPLE */
         .search-wrapper{flex:1;max-width:500px;background:var(--gray);border-radius:8px;padding:5px 15px;display:flex}
         .search-wrapper input{border:none;background:transparent;width:100%;outline:none;padding:8px;font-size:14px}
         .search-wrapper button{background:none;border:none;color:#888;cursor:pointer}
         
-        /* NAV */
+        /* NAV SIMPLE */
         .nav-links{display:flex;gap:25px}
-        .nav-link{font-weight:500;color:#666;font-size:14px;cursor:pointer}
-        .nav-link:hover{color:var(--text);color:var(--accent)}
+        .nav-link{font-weight:500;color:#666;font-size:14px;position:relative;cursor:pointer}
+        .nav-link:hover{color:var(--text)}
         .mobile-btn{display:none;font-size:20px;background:none;border:none;cursor:pointer}
 
-        /* FILTROS */
+        /* FILTROS INTEGRADOS */
         .filter-container{padding:15px 0;border-bottom:1px solid #eee;display:flex;justify-content:center;gap:15px;flex-wrap:wrap;align-items:center}
         .color-dots{display:flex;gap:8px}
         .dot{width:20px;height:20px;border-radius:50%;cursor:pointer;border:1px solid #ddd;transition:transform 0.2s}
         .dot:hover,.dot.active{transform:scale(1.2);border-color:#333}
         .reset-btn{font-size:13px;color:#888;background:none;border:none;border-bottom:1px solid #ccc;cursor:pointer}
 
-        /* HERO */
+        /* HERO SECTION */
         .hero{height:350px;background:#f0f0f0;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
         .hero-slide{position:absolute;top:0;left:0;width:100%;height:100%;background-size:cover;background-position:center;opacity:0;transition:opacity 1s}
         .hero-slide.active{opacity:1}
@@ -50,45 +58,49 @@
         .hero-text h1{font-size:40px;font-weight:700;margin-bottom:10px}
         .hero-text p{font-size:18px;opacity:0.9}
 
-        /* CATEGORIAS */
+        /* CATEGORIAS VERTICALES */
         .category-section{margin-top:60px}
         .cat-title{font-size:22px;font-weight:600;margin-bottom:25px;padding-left:15px;border-left:4px solid var(--accent)}
         
-        /* TARJETAS */
+        /* TARJETAS DE PRODUCTO MINIMALISTAS */
         .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:30px}
-        .card{background:#fff;transition:0.3s;position:relative;border:1px solid transparent}
-        .card:hover{transform:translateY(-5px);border-color:#eee;box-shadow:0 10px 30px rgba(0,0,0,0.05)}
+        .card{background:#fff;transition:0.3s;position:relative}
+        .card:hover{transform:translateY(-5px)}
         
         .card-img{height:250px;background:#f9f9f9;overflow:hidden;border-radius:12px;position:relative}
         .card-img img{width:100%;height:100%;object-fit:cover;transition:0.5s}
         .card:hover .card-img img{transform:scale(1.05)}
         
-        .code-tag{position:absolute;top:10px;right:10px;background:rgba(255,255,255,0.9);padding:4px 8px;border-radius:6px;font-size:11px;font-weight:700;color:#333;box-shadow:0 2px 5px rgba(0,0,0,0.1)}
+        /* CÓDIGO FLOTANTE (Identificador) */
+        .code-tag{position:absolute;top:10px;right:10px;background:rgba(255,255,255,0.95);padding:4px 8px;border-radius:6px;font-size:11px;font-weight:700;color:#333;box-shadow:0 2px 5px rgba(0,0,0,0.1)}
+        
+        /* BOTON FLOTANTE CARD */
         .card-btn{position:absolute;bottom:15px;right:15px;width:40px;height:40px;border-radius:50%;background:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 10px rgba(0,0,0,0.1);opacity:0;transform:translateY(10px);transition:0.3s}
         .card:hover .card-btn{opacity:1;transform:translateY(0)}
         .card-btn:hover{background:var(--accent);color:#fff}
 
         .card-info{padding-top:12px}
         .card-title{font-size:15px;font-weight:500;color:#333;margin-bottom:4px}
-        .card-cat{font-size:12px;color:#888;text-transform:uppercase}
+        .card-cat{font-size:12px;color:#888;text-transform:uppercase;letter-spacing:0.5px}
 
         /* FOOTER */
         footer{margin-top:80px;background:#f9f9f9;padding:60px 0;text-align:center;border-top:1px solid #eee}
         .footer-text{max-width:600px;margin:0 auto 20px;color:#666}
         .footer-address{font-weight:500;margin-bottom:20px;color:#333}
-        .socials{display:flex;justify-content:center;gap:20px;font-size:24px;color:#888}
+        .socials{display:flex;justify-content:center;gap:20px;font-size:20px;color:#888}
         .socials a:hover{color:var(--accent)}
 
-        /* WHATSAPP & MODAL */
+        /* EXTRAS */
         .whatsapp-float{position:fixed;bottom:25px;right:25px;width:55px;height:55px;background:#25d366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 5px 15px rgba(0,0,0,0.2);z-index:999;transition:0.3s}
         .whatsapp-float:hover{transform:scale(1.1)}
         
+        /* MODAL */
         .modal-wrap{position:fixed;inset:0;background:rgba(255,255,255,0.98);z-index:2000;display:none;justify-content:center;align-items:center;padding:20px}
         .modal-wrap.active{display:flex}
         .modal-box{background:#fff;max-width:500px;width:100%;border:1px solid #eee;box-shadow:0 20px 50px rgba(0,0,0,0.1);border-radius:15px;padding:30px;position:relative;text-align:center}
         .close-btn{position:absolute;top:15px;right:15px;background:none;border:none;font-size:24px;cursor:pointer;color:#888}
         .modal-img{width:100%;height:300px;object-fit:cover;border-radius:10px;margin-bottom:20px;cursor:zoom-in}
-        
+
         /* ZOOM (LIGHTBOX) */
         .zoom-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:3000;display:none;justify-content:center;align-items:center;cursor:zoom-out}
         .zoom-overlay.active{display:flex}
@@ -107,12 +119,10 @@
 
 <header>
     <div class="container header-grid">
-        <!-- LOGO E IMAGEN -->
         <a href="#" class="logo">
             <img src="img/logo.png" alt="Logo" onerror="this.style.display='none'"> 
             La <span>Santiaguera</span>
         </a>
-        
         <div class="search-wrapper">
             <input type="text" id="searchInput" placeholder="Buscar productos...">
             <button onclick="filterProducts()"><i class="fas fa-search"></i></button>
@@ -127,21 +137,23 @@
     </div>
 </header>
 
+<!-- FILTROS -->
 <div class="filter-container">
     <span style="font-size:13px;color:#888">Color:</span>
     <div class="color-dots">
-        <span class="dot" style="background:#fff" onclick="filterColor('blanco',this)"></span>
-        <span class="dot" style="background:#000" onclick="filterColor('negro',this)"></span>
-        <span class="dot" style="background:#e74c3c" onclick="filterColor('rojo',this)"></span>
-        <span class="dot" style="background:#3498db" onclick="filterColor('azul',this)"></span>
-        <span class="dot" style="background:#27ae60" onclick="filterColor('verde',this)"></span>
-        <span class="dot" style="background:#f39c12" onclick="filterColor('dorado',this)"></span>
-        <span class="dot" style="background:#9b59b6" onclick="filterColor('morado',this)"></span>
-        <span class="dot" style="background:#ffc0cb" onclick="filterColor('rosa',this)"></span>
+        <span class="dot" style="background:#fff" onclick="filterColor('blanco',this)" title="Blanco"></span>
+        <span class="dot" style="background:#000" onclick="filterColor('negro',this)" title="Negro"></span>
+        <span class="dot" style="background:#e74c3c" onclick="filterColor('rojo',this)" title="Rojo"></span>
+        <span class="dot" style="background:#3498db" onclick="filterColor('azul',this)" title="Azul"></span>
+        <span class="dot" style="background:#27ae60" onclick="filterColor('verde',this)" title="Verde"></span>
+        <span class="dot" style="background:#f39c12" onclick="filterColor('dorado',this)" title="Dorado"></span>
+        <span class="dot" style="background:#9b59b6" onclick="filterColor('morado',this)" title="Morado"></span>
+        <span class="dot" style="background:#ffc0cb" onclick="filterColor('rosa',this)" title="Rosa"></span>
     </div>
     <button class="reset-btn" onclick="resetFilters()">Ver todos</button>
 </div>
 
+<!-- HERO BANNER -->
 <div class="hero">
     <div class="hero-slide active" style="background-image:url('img/cristaleria/CR005.jpg')"></div>
     <div class="hero-slide" style="background-image:url('img/sabanas/SBJ001.jpg')"></div>
@@ -156,28 +168,32 @@
 
 <div class="container">
     
+    <!-- SÁBANAS -->
     <div class="category-section" id="sec-sabanas">
         <h2 class="cat-title">Sábanas</h2>
         <div class="grid" id="grid-sabanas"></div>
     </div>
 
+    <!-- CRISTALERÍA -->
     <div class="category-section" id="sec-cristaleria">
         <h2 class="cat-title">Cristalería</h2>
         <div class="grid" id="grid-cristaleria"></div>
     </div>
 
+    <!-- CALZADO -->
     <div class="category-section" id="sec-calzado">
         <h2 class="cat-title">Calzado</h2>
         <div class="grid" id="grid-calzado"></div>
     </div>
 
+    <!-- VARIOS -->
     <div class="category-section" id="sec-varios">
         <h2 class="cat-title">Varios</h2>
         <div class="grid" id="grid-varios"></div>
     </div>
 
     <div id="no-results" style="display:none;text-align:center;padding:50px;color:#888">
-        No se encontraron productos disponibles.
+        No se encontraron productos con tu búsqueda.
     </div>
 
 </div>
@@ -194,13 +210,12 @@
             <i class="fas fa-phone"></i> +5359094266
         </div>
         <div class="socials">
-            <a href="https://wa.me/5359094266" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/5359094266"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
     </div>
 </footer>
-
 <!-- MODALES -->
 <div class="modal-wrap" id="productModal">
     <div class="modal-box">
@@ -217,6 +232,12 @@
 <a href="https://wa.me/5359094266" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
 <script>
+/* 
+   SISTEMA DE GESTIÓN SIMPLE:
+   1. Para AGOTADO: Cambia activo:true por activo:false
+   2. Para NUEVO: Copia una línea y cambia los datos.
+*/
+
 const productos = [
     // SÁBANAS
     {codigo:"SBJ001", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"sabanas", imagen:"img/sabanas/SBJ001.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad."},
@@ -238,10 +259,10 @@ const productos = [
     {codigo:"SBJ017", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"sabanas", imagen:"img/sabanas/SBJ017.jpg", colores:["negro"], descripcion:"Juego de sábanas con funda de alta calidad."},
 
     // CRISTALERÍA
-    {codigo:"CR001", nombre:"Cristalería", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR001.jpg", colores:["transparente"], descripcion:"Cristalería de alta calidad."},
-    {codigo:"CR002", nombre:"Cristalería", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR002.jpg", colores:["transparente"], descripcion:"Cristalería de alta calidad."},
-    {codigo:"CR003", nombre:"Cristalería", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR003.jpg", colores:["transparente"], descripcion:"Cristalería de alta calidad."},
-    {codigo:"CR004", nombre:"Cristalería", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR004.jpg", colores:["transparente"], descripcion:"Cristalería de alta calidad."},
+    {codigo:"CR001", nombre:"Juego de Copas de Vino", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR001.jpg", colores:["transparente"], descripcion:"Elegante juego de copas para vino."},
+    {codigo:"CR002", nombre:"Vasos Altos de Agua", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR002.jpg", colores:["transparente"], descripcion:"Set de vasos altos ideales para agua o jugos."},
+    {codigo:"CR003", nombre:"Copas de Champán", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR003.jpg", colores:["transparente"], descripcion:"Copas estilizadas para brindis especiales."},
+    {codigo:"CR004", nombre:"Vasos Bajos Whiskernos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR004.jpg", colores:["transparente"], descripcion:"Vasos bajos robustos, perfectos para licores."},
     {codigo:"CR005", nombre:"Juego de vasos para whisky", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR005.jpg", colores:["transparente"], descripcion:"Elegante juego de vasos diseñados para whisky."},
     {codigo:"CR006", nombre:"Juego de 6 vasos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR006.jpg", colores:["transparente"], descripcion:"Set completo de 6 vasos ideales para uso diario."},
     {codigo:"CR007", nombre:"Platos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR007.jpg", colores:["transparente"], descripcion:"Platos de cristal elegantes y resistentes. Incluye modelos variados."},
@@ -275,7 +296,7 @@ const productos = [
     {codigo:"VR003", nombre:"Juego de pozuelo trae 7", activo:true, categoria:"varios", imagen:"img/varios/VR003.jpg", colores:["blanco"], descripcion:"Set completo de 7 pozuelos de diferentes tamaños."},
     {codigo:"VR004", nombre:"Juego de 3 pozuelos", activo:true, categoria:"varios", imagen:"img/varios/VR004.jpg", colores:["azul"], descripcion:"Práctico juego de 3 pozuelos para tu cocina."},
     {codigo:"VR005", nombre:"Set de baño 4 piezas", activo:true, categoria:"varios", imagen:"img/varios/VR005.jpg", colores:["blanco"], descripcion:"Completo set de accesorios para baño de 4 piezas."},
-    {codigo:"VR006", nombre:"Vasos plásticos resistentes", activo:true, categoria:"varios", imagen:"img/varios/VR006.jpg", colores:["rojo"], descripcion:"Vasos de plástico duradero, ideales para bebidas calientes."},
+    {codigo:"VR006", nombre:"Vasos plásticos resistentes al calor", activo:true, categoria:"varios", imagen:"img/varios/VR006.jpg", colores:["rojo"], descripcion:"Vasos de plástico duradero, ideales para bebidas calientes."},
     {codigo:"VR007", nombre:"Vasos de cerámica", activo:true, categoria:"varios", imagen:"img/varios/VR007.jpg", colores:["blanco"], descripcion:"Vasos de cerámica de alta calidad."},
     {codigo:"VR008", nombre:"Pomos de silicona", activo:true, categoria:"varios", imagen:"img/varios/VR008.jpg", colores:["negro"], descripcion:"Pomos flexibles de silicona, libres de BPA."},
     {codigo:"VR009", nombre:"Tenis Converse", activo:true, categoria:"varios", imagen:"img/varios/VR009.jpg", colores:["azul"], descripcion:"Clásicos tenis estilo Converse, cómodos y duraderos."},
@@ -288,7 +309,9 @@ const productos = [
     {codigo:"VR018", nombre:"Vasos de cerámica", activo:true, categoria:"varios", imagen:"img/varios/VR018.jpg", colores:["negro"], descripcion:"Vasos de cerámica con diseño moderno."},
     {codigo:"VR020", nombre:"Juego de 3 pozuelos con su cucharita", activo:true, categoria:"varios", imagen:"img/varios/VR020.jpg", colores:["blanco"], descripcion:"Set de 3 pozuelos que incluyen cucharita."},
     {codigo:"VR023", nombre:"Pozuelos cuadrados trae 7", activo:true, categoria:"varios", imagen:"img/varios/VR023.jpg", colores:["negro"], descripcion:"Set de 7 pozuelos de forma cuadrada."},
-    {codigo:"VR024", nombre:"Pozuelos circulares trae 7", activo:true, categoria:"varios", imagen:"img/varios/VR024.jpg", colores:["dorado"], descripcion:"Set de 7 pozuelos de forma circular."},
+    {codigo:"VR024", nombre:"Pozuelos en forma circular trae 7", activo:true, categoria:"varios", imagen:"img/varios/VR024.jpg", colores:["dorado"], descripcion:"Set de 7 pozuelos de forma circular."},
+    {codigo:"VR026", nombre:"Bolsitos de piel y tela", activo:true, categoria:"varios", imagen:"img/varios/VR026.jpg", colores:["verde"], descripcion:"Variante de bolsitos de piel y tela."},
+    {codigo:"VR027", nombre:"Bolsitos de piel y tela", activo:true, categoria:"varios", imagen:"img/varios/VR027.jpg", colores:["blanco"], descripcion:"Variante de bolsitos de piel y tela."},
     {codigo:"VR028", nombre:"Pinzas de cocina", activo:true, categoria:"varios", imagen:"img/varios/VR028.jpg", colores:["negro"], descripcion:"Pinzas de cocina resistentes y prácticas."}
 ];
 
@@ -306,11 +329,11 @@ function renderProducts(lista = productos) {
     let encontrados = false;
 
     lista.forEach(p => {
-        if (!p.activo) return;
+        if (!p.activo) return; // Si es false, no se muestra
 
         const grid = document.getElementById(`grid-${p.categoria}`);
         if (grid) {
-            // TRUCO: onerror='this.closest(".card").remove()' elimina el producto si no hay foto
+            // El onerror hace que si la foto no existe, la tarjeta se oculte sola
             grid.innerHTML += `
             <div class="card">
                 <span class="code-tag">${p.codigo}</span>
@@ -321,7 +344,6 @@ function renderProducts(lista = productos) {
                     </button>
                 </div>
                 <div class="card-info">
-                    <div class="card-cat">${p.categoria}</div>
                     <div class="card-title">${p.nombre}</div>
                 </div>
             </div>`;
@@ -332,7 +354,6 @@ function renderProducts(lista = productos) {
     document.getElementById('no-results').style.display = encontrados ? 'none' : 'block';
 }
 
-// Función auxiliar para ocultar secciones que se quedaron vacías tras cargar imágenes rotas
 function checkEmptySections() {
     ['sabanas', 'cristaleria', 'calzado', 'varios'].forEach(cat => {
         const grid = document.getElementById(`grid-${cat}`);
@@ -389,7 +410,7 @@ function openModal(codigo) {
     document.getElementById('modalContent').innerHTML = `
         <img src="${p.imagen}" class="modal-img" onclick="openZoom('${p.imagen}')" title="Clic para ampliar">
         <h2 style="font-size:22px;margin-bottom:10px">${p.nombre}</h2>
-        <div style="background:#f0f0f0;display:inline-block;padding:5px 10px;border-radius:5px;font-weight:600;margin-bottom:20px">CÓDIGO: ${p.codigo}</div>
+        <div style="background:#f0f0f0;display:inline-block;padding:5px 10px;border-radius:5px;font-weight:600;margin-bottom:20px;color:#333">CÓDIGO: ${p.codigo}</div>
         <p style="color:#666;margin-bottom:25px">${p.descripcion}</p>
         <button onclick="sendWhatsapp('${p.codigo}', '${p.nombre}')" 
             style="background:#25d366;color:#fff;border:none;padding:12px 30px;border-radius:25px;font-size:16px;cursor:pointer;font-weight:600;width:100%">
