@@ -6,12 +6,11 @@
     <title>La Santiaguera | Tienda Online</title>
     
     <!-- LOGO PARA GOOGLE Y NAVEGADORES -->
-    <link rel="icon" type="image/png" href="img/logo.png" sizes="192x192">
-    <link rel="apple-touch-icon" href="img/logo.png">
+    <link rel="icon" type="image/png" href="img/favicon.png" sizes="512x512">
+    <link rel="apple-touch-icon" href="img/favicon.png">
     <meta name="theme-color" content="#ffffff">
 
-    <!-- Pega aquí la etiqueta de verificación de Google Search Console cuando la tengas -->
-    <!-- <meta name="google-site-verification" content="TU_CODIGO_AQUI" /> -->
+    <!-- <meta name="google-site-verification" content="PEGAR_AQUI" /> -->
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -23,33 +22,27 @@
         a{text-decoration:none;color:inherit}
         .container{max-width:1200px;margin:0 auto;padding:0 20px}
         
-        /* HEADER LIMPIO */
         header{background:#fff;position:sticky;top:0;z-index:1000;padding:20px 0;border-bottom:1px solid #eee}
         .header-grid{display:flex;justify-content:space-between;align-items:center;gap:20px}
-        
         .logo{font-size:24px;font-weight:700;letter-spacing:-0.5px;color:var(--text);display:flex;align-items:center;gap:10px}
-        .logo img{height:40px;width:auto}
+        .logo img{height:40px;width:auto;border-radius:8px}
         .logo span{color:var(--accent)}
         
-        /* BUSCADOR SIMPLE */
         .search-wrapper{flex:1;max-width:500px;background:var(--gray);border-radius:8px;padding:5px 15px;display:flex}
         .search-wrapper input{border:none;background:transparent;width:100%;outline:none;padding:8px;font-size:14px}
         .search-wrapper button{background:none;border:none;color:#888;cursor:pointer}
         
-        /* NAV SIMPLE */
-        .nav-links{display:flex;gap:25px}
-        .nav-link{font-weight:500;color:#666;font-size:14px;position:relative;cursor:pointer}
+        .nav-links{display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
+        .nav-link{font-weight:500;color:#666;font-size:14px;position:relative;cursor:pointer;white-space:nowrap}
         .nav-link:hover{color:var(--text)}
         .mobile-btn{display:none;font-size:20px;background:none;border:none;cursor:pointer}
 
-        /* FILTROS INTEGRADOS */
         .filter-container{padding:15px 0;border-bottom:1px solid #eee;display:flex;justify-content:center;gap:15px;flex-wrap:wrap;align-items:center}
         .color-dots{display:flex;gap:8px}
         .dot{width:20px;height:20px;border-radius:50%;cursor:pointer;border:1px solid #ddd;transition:transform 0.2s}
         .dot:hover,.dot.active{transform:scale(1.2);border-color:#333}
         .reset-btn{font-size:13px;color:#888;background:none;border:none;border-bottom:1px solid #ccc;cursor:pointer}
 
-        /* HERO SECTION */
         .hero{height:350px;background:#f0f0f0;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
         .hero-slide{position:absolute;top:0;left:0;width:100%;height:100%;background-size:cover;background-position:center;opacity:0;transition:opacity 1s}
         .hero-slide.active{opacity:1}
@@ -58,11 +51,9 @@
         .hero-text h1{font-size:40px;font-weight:700;margin-bottom:10px}
         .hero-text p{font-size:18px;opacity:0.9}
 
-        /* CATEGORIAS VERTICALES */
         .category-section{margin-top:60px}
         .cat-title{font-size:22px;font-weight:600;margin-bottom:25px;padding-left:15px;border-left:4px solid var(--accent)}
         
-        /* TARJETAS DE PRODUCTO MINIMALISTAS */
         .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:30px}
         .card{background:#fff;transition:0.3s;position:relative}
         .card:hover{transform:translateY(-5px)}
@@ -71,10 +62,8 @@
         .card-img img{width:100%;height:100%;object-fit:cover;transition:0.5s}
         .card:hover .card-img img{transform:scale(1.05)}
         
-        /* CÓDIGO FLOTANTE (Identificador) */
         .code-tag{position:absolute;top:10px;right:10px;background:rgba(255,255,255,0.95);padding:4px 8px;border-radius:6px;font-size:11px;font-weight:700;color:#333;box-shadow:0 2px 5px rgba(0,0,0,0.1)}
         
-        /* BOTON FLOTANTE CARD */
         .card-btn{position:absolute;bottom:15px;right:15px;width:40px;height:40px;border-radius:50%;background:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 10px rgba(0,0,0,0.1);opacity:0;transform:translateY(10px);transition:0.3s}
         .card:hover .card-btn{opacity:1;transform:translateY(0)}
         .card-btn:hover{background:var(--accent);color:#fff}
@@ -83,28 +72,32 @@
         .card-title{font-size:15px;font-weight:500;color:#333;margin-bottom:4px}
         .card-cat{font-size:12px;color:#888;text-transform:uppercase;letter-spacing:0.5px}
 
-        /* FOOTER */
         footer{margin-top:80px;background:#f9f9f9;padding:60px 0;text-align:center;border-top:1px solid #eee}
         .footer-text{max-width:600px;margin:0 auto 20px;color:#666}
         .footer-address{font-weight:500;margin-bottom:20px;color:#333}
-        .socials{display:flex;justify-content:center;gap:20px;font-size:20px;color:#888}
+        .socials{display:flex;justify-content:center;gap:20px;font-size:24px;color:#888}
         .socials a:hover{color:var(--accent)}
 
-        /* EXTRAS */
         .whatsapp-float{position:fixed;bottom:25px;right:25px;width:55px;height:55px;background:#25d366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 5px 15px rgba(0,0,0,0.2);z-index:999;transition:0.3s}
         .whatsapp-float:hover{transform:scale(1.1)}
         
-        /* MODAL */
         .modal-wrap{position:fixed;inset:0;background:rgba(255,255,255,0.98);z-index:2000;display:none;justify-content:center;align-items:center;padding:20px}
         .modal-wrap.active{display:flex}
         .modal-box{background:#fff;max-width:500px;width:100%;border:1px solid #eee;box-shadow:0 20px 50px rgba(0,0,0,0.1);border-radius:15px;padding:30px;position:relative;text-align:center}
         .close-btn{position:absolute;top:15px;right:15px;background:none;border:none;font-size:24px;cursor:pointer;color:#888}
         .modal-img{width:100%;height:300px;object-fit:cover;border-radius:10px;margin-bottom:20px;cursor:zoom-in}
-
-        /* ZOOM (LIGHTBOX) */
+        
         .zoom-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:3000;display:none;justify-content:center;align-items:center;cursor:zoom-out}
         .zoom-overlay.active{display:flex}
         .zoom-overlay img{max-width:95%;max-height:95%;border-radius:5px;box-shadow:0 0 20px rgba(0,0,0,0.5)}
+
+        /* LOADER */
+        .loader-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:#fff;display:flex;align-items:center;justify-content:center;z-index:10000;transition:.5s}
+        .loader-overlay.hidden{opacity:0;pointer-events:none}
+        .loader span{width:12px;height:12px;background:var(--accent);border-radius:50%;animation:bounce .6s infinite alternate;display:inline-block;margin:0 2px}
+        .loader span:nth-child(2){animation-delay:.2s;background:#333}
+        .loader span:nth-child(3){animation-delay:.4s;background:var(--gold)}
+        @keyframes bounce{to{transform:translateY(-15px)}}
 
         @media(max-width:768px){
             .nav-links{display:none;flex-direction:column;position:fixed;top:70px;left:0;width:100%;background:#fff;padding:20px;box-shadow:0 5px 10px rgba(0,0,0,0.05)}
@@ -117,19 +110,25 @@
 </head>
 <body>
 
+<div class="loader-overlay" id="loader">
+    <div class="loader"><span></span><span></span><span></span></div>
+</div>
+
 <header>
     <div class="container header-grid">
         <a href="#" class="logo">
-            <img src="img/logo.png" alt="Logo" onerror="this.style.display='none'"> 
+            <img src="img/favicon.png" alt="Logo" onerror="this.style.display='none'"> 
             La <span>Santiaguera</span>
         </a>
+        
         <div class="search-wrapper">
             <input type="text" id="searchInput" placeholder="Buscar productos...">
             <button onclick="filterProducts()"><i class="fas fa-search"></i></button>
         </div>
         <button class="mobile-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
         <div class="nav-links" id="navMenu">
-            <a class="nav-link" onclick="scrollToId('sec-sabanas')">Sábanas</a>
+            <a class="nav-link" onclick="scrollToId('sec-sabanas')">Sábanas Solas</a>
+            <a class="nav-link" onclick="scrollToId('sec-juego_sabanas')">Juegos de Sábanas</a>
             <a class="nav-link" onclick="scrollToId('sec-cristaleria')">Cristalería</a>
             <a class="nav-link" onclick="scrollToId('sec-calzado')">Calzado</a>
             <a class="nav-link" onclick="scrollToId('sec-varios')">Varios</a>
@@ -137,7 +136,6 @@
     </div>
 </header>
 
-<!-- FILTROS -->
 <div class="filter-container">
     <span style="font-size:13px;color:#888">Color:</span>
     <div class="color-dots">
@@ -153,7 +151,6 @@
     <button class="reset-btn" onclick="resetFilters()">Ver todos</button>
 </div>
 
-<!-- HERO BANNER -->
 <div class="hero">
     <div class="hero-slide active" style="background-image:url('img/cristaleria/CR005.jpg')"></div>
     <div class="hero-slide" style="background-image:url('img/sabanas/SBJ001.jpg')"></div>
@@ -168,10 +165,16 @@
 
 <div class="container">
     
-    <!-- SÁBANAS -->
+    <!-- SÁBANAS SOLAS -->
     <div class="category-section" id="sec-sabanas">
-        <h2 class="cat-title">Sábanas</h2>
+        <h2 class="cat-title">Sábanas Solas (Cameras Individuales)</h2>
         <div class="grid" id="grid-sabanas"></div>
+    </div>
+
+    <!-- JUEGOS DE SÁBANAS -->
+    <div class="category-section" id="sec-juego_sabanas">
+        <h2 class="cat-title">Juegos de Sábanas con Funda</h2>
+        <div class="grid" id="grid-juego_sabanas"></div>
     </div>
 
     <!-- CRISTALERÍA -->
@@ -193,7 +196,7 @@
     </div>
 
     <div id="no-results" style="display:none;text-align:center;padding:50px;color:#888">
-        No se encontraron productos con tu búsqueda.
+        No se encontraron productos disponibles.
     </div>
 
 </div>
@@ -210,9 +213,8 @@
             <i class="fas fa-phone"></i> +5359094266
         </div>
         <div class="socials">
-            <a href="https://wa.me/5359094266"><i class="fab fa-whatsapp"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/5359094266" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/tiendalasantiaguera" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
     </div>
 </footer>
@@ -233,107 +235,153 @@
 
 <script>
 /* 
-   SISTEMA DE GESTIÓN SIMPLE:
-   1. Para AGOTADO: Cambia activo:true por activo:false
-   2. Para NUEVO: Copia una línea y cambia los datos.
+   SISTEMA DE GESTIÓN PARA EL CLIENTE:
+   1. Para DESACTIVAR un producto (agotado): Cambia "activo: true" a "activo: false"
+   2. Para AGREGAR un producto nuevo o faltante de la foto en la carpeta, asegúrate de que el "codigo" y el nombre de la foto (imagen) coincidan.
 */
 
 const productos = [
-    // SÁBANAS
-    {codigo:"SBJ001", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"sabanas", imagen:"img/sabanas/SBJ001.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad."},
-    {codigo:"SBJ002", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"sabanas", imagen:"img/sabanas/SBJ002.jpg", colores:["azul"], descripcion:"Juego de sábanas con funda de alta calidad."},
-    {codigo:"SBJ003", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"sabanas", imagen:"img/sabanas/SBJ003.jpg", colores:["rosa"], descripcion:"Juego de sábanas con funda de alta calidad."},
-    {codigo:"SBJ004", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"sabanas", imagen:"img/sabanas/SBJ004.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad."},
-    {codigo:"SBJ005", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"sabanas", imagen:"img/sabanas/SBJ005.jpg", colores:["gris"], descripcion:"Juego de sábanas con funda de alta calidad."},
-    {codigo:"SBJ006", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"sabanas", imagen:"img/sabanas/SBJ006.jpg", colores:["azul"], descripcion:"Juego de sábanas con funda de alta calidad."},
-    {codigo:"SBJ007", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"sabanas", imagen:"img/sabanas/SBJ007.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad."},
-    {codigo:"SBJ008", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"sabanas", imagen:"img/sabanas/SBJ008.jpg", colores:["negro"], descripcion:"Juego de sábanas con funda de alta calidad."},
-    {codigo:"SBJ009", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"sabanas", imagen:"img/sabanas/SBJ009.jpg", colores:["rosa"], descripcion:"Juego de sábanas con funda de alta calidad."},
-    {codigo:"SBJ010", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"sabanas", imagen:"img/sabanas/SBJ010.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad."},
-    {codigo:"SBJ011", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"sabanas", imagen:"img/sabanas/SBJ011.jpg", colores:["azul"], descripcion:"Juego de sábanas con funda de alta calidad."},
-    {codigo:"SBJ012", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"sabanas", imagen:"img/sabanas/SBJ012.jpg", colores:["gris"], descripcion:"Juego de sábanas con funda de alta calidad."},
-    {codigo:"SBJ013", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"sabanas", imagen:"img/sabanas/SBJ013.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad."},
-    {codigo:"SBJ014", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"sabanas", imagen:"img/sabanas/SBJ014.jpg", colores:["rosa"], descripcion:"Juego de sábanas con funda de alta calidad."},
-    {codigo:"SBJ015", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"sabanas", imagen:"img/sabanas/SBJ015.jpg", colores:["azul"], descripcion:"Juego de sábanas con funda de alta calidad."},
-    {codigo:"SBJ016", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"sabanas", imagen:"img/sabanas/SBJ016.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad."},
-    {codigo:"SBJ017", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"sabanas", imagen:"img/sabanas/SBJ017.jpg", colores:["negro"], descripcion:"Juego de sábanas con funda de alta calidad."},
+    // --- SÁBANAS SOLAS (SB001 al SB030) ---
+    {codigo:"SB001", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB001.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB002", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB002.jpg", colores:["azul"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB003", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB003.jpg", colores:["rosa"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB004", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB004.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB005", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB005.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB006", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB006.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB007", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB007.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB008", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB008.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB009", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB009.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB010", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB010.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB011", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB011.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB012", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB012.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB013", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB013.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB014", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB014.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB015", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB015.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB016", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB016.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB017", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB017.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB018", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB018.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB019", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB019.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB020", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB020.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB021", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB021.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB022", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB022.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB023", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB023.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB024", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB024.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB025", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB025.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB026", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB026.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB027", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB027.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB028", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB028.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB029", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB029.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB030", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB030.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
 
-    // CRISTALERÍA
-    {codigo:"CR001", nombre:"Juego de Copas de Vino", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR001.jpg", colores:["transparente"], descripcion:"Elegante juego de copas para vino."},
-    {codigo:"CR002", nombre:"Vasos Altos de Agua", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR002.jpg", colores:["transparente"], descripcion:"Set de vasos altos ideales para agua o jugos."},
-    {codigo:"CR003", nombre:"Copas de Champán", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR003.jpg", colores:["transparente"], descripcion:"Copas estilizadas para brindis especiales."},
-    {codigo:"CR004", nombre:"Vasos Bajos Whiskernos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR004.jpg", colores:["transparente"], descripcion:"Vasos bajos robustos, perfectos para licores."},
-    {codigo:"CR005", nombre:"Juego de vasos para whisky", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR005.jpg", colores:["transparente"], descripcion:"Elegante juego de vasos diseñados para whisky."},
-    {codigo:"CR006", nombre:"Juego de 6 vasos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR006.jpg", colores:["transparente"], descripcion:"Set completo de 6 vasos ideales para uso diario."},
-    {codigo:"CR007", nombre:"Platos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR007.jpg", colores:["transparente"], descripcion:"Platos de cristal elegantes y resistentes. Incluye modelos variados."},
-    {codigo:"CR008", nombre:"Platos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR008.jpg", colores:["transparente"], descripcion:"Platos de cristal elegantes y resistentes."},
-    {codigo:"CR009", nombre:"Juego de vasos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR009.jpg", colores:["transparente"], descripcion:"Juego de vasos clásicos."},
-    {codigo:"CR010", nombre:"Juegos de vasos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR010.jpg", colores:["transparente"], descripcion:"Variedad de juegos de vasos para todas las ocasiones."},
-    {codigo:"CR012", nombre:"Dispensador de jabón líquido", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR012.jpg", colores:["transparente"], descripcion:"Elegante dispensador de cristal para jabón líquido."},
-    {codigo:"CR014", nombre:"Tequilero", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR014.jpg", colores:["transparente"], descripcion:"Vaso tequilero clásico."},
-    {codigo:"CR015", nombre:"Juego de tequilero", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR015.jpg", colores:["transparente"], descripcion:"Set de vasos tequileros para compartir."},
-    {codigo:"CR016", nombre:"Juego de 6 vasos de colores", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR016.jpg", colores:["transparente"], descripcion:"Divertido juego de 6 vasos con detalles en colores."},
-    {codigo:"CR017", nombre:"Tequilero", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR017.jpg", colores:["transparente"], descripcion:"Vaso tequilero de diseño especial."},
-    {codigo:"CR018", nombre:"Juego de jarra con 4 vasos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR018.jpg", colores:["transparente"], descripcion:"Práctico juego que incluye una jarra y 4 vasos a juego."},
-    {codigo:"CR019", nombre:"Juego de jarra con vasos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR019.jpg", colores:["transparente"], descripcion:"Completo set de jarra y vasos para tus bebidas."},
-    {codigo:"CR020", nombre:"Cenicero", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR020.jpg", colores:["transparente"], descripcion:"Cenicero de cristal robusto y elegante."},
-    {codigo:"CR021", nombre:"Juego de vasos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR021.jpg", colores:["transparente"], descripcion:"Juego de vasos de cristal."},
-    {codigo:"CR022", nombre:"Juego de 4 tazas de leche", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR022.jpg", colores:["transparente"], descripcion:"Hermoso juego de 4 tazas ideales para leche o café."},
-    {codigo:"CR023", nombre:"Juego de vasos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR023.jpg", colores:["transparente"], descripcion:"Juego de vasos elegantes."},
-    {codigo:"CR025", nombre:"Tequilero", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR025.jpg", colores:["transparente"], descripcion:"Vaso tequilero de alta calidad."},
+    // --- JUEGOS DE SÁBANAS (SBJ001 al SBJ030) ---
+    {codigo:"SBJ001", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ001.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ002", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ002.jpg", colores:["azul"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ003", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ003.jpg", colores:["rosa"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ004", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ004.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ005", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ005.jpg", colores:["gris"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ006", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ006.jpg", colores:["azul"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ007", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ007.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ008", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ008.jpg", colores:["negro"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ009", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ009.jpg", colores:["rosa"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ010", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ010.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ011", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ011.jpg", colores:["azul"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ012", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ012.jpg", colores:["gris"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ013", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ013.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ014", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ014.jpg", colores:["rosa"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ015", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ015.jpg", colores:["azul"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ016", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ016.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ017", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ017.jpg", colores:["negro"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ018", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ018.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ019", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ019.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ020", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ020.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ021", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ021.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ022", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ022.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ023", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ023.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ024", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ024.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ025", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ025.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ026", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ026.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ027", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ027.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ028", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ028.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ029", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ029.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ030", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ030.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
 
-    // CALZADO
-    {codigo:"CZ002", nombre:"Calzado", activo:true, categoria:"calzado", imagen:"img/calzado/CZ002.jpg", colores:["azul"], descripcion:"Calzado cómodo para uso diario."},
-    {codigo:"CZ003", nombre:"Calzado", activo:true, categoria:"calzado", imagen:"img/calzado/CZ003.jpg", colores:["negro"], descripcion:"Calzado cómodo para uso diario."},
-    {codigo:"CZ004", nombre:"Calzado", activo:true, categoria:"calzado", imagen:"img/calzado/CZ004.jpg", colores:["rojo"], descripcion:"Calzado cómodo para uso diario."},
-    {codigo:"CZ005", nombre:"Calzado", activo:true, categoria:"calzado", imagen:"img/calzado/CZ005.jpg", colores:["blanco"], descripcion:"Calzado cómodo para uso diario."},
-    {codigo:"CZ006", nombre:"Calzado", activo:true, categoria:"calzado", imagen:"img/calzado/CZ006.jpg", colores:["negro"], descripcion:"Calzado cómodo para uso diario."},
-    {codigo:"CZ007", nombre:"Calzado", activo:true, categoria:"calzado", imagen:"img/calzado/CZ007.jpg", colores:["azul"], descripcion:"Calzado cómodo para uso diario."},
-    {codigo:"CZ008", nombre:"Calzado", activo:true, categoria:"calzado", imagen:"img/calzado/CZ008.jpg", colores:["rosa"], descripcion:"Calzado cómodo para uso diario."},
+    // --- CRISTALERÍA ---
+    {codigo:"CR001", nombre:"Juego de Copas de Vino", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR001.jpg", colores:["transparente"], descripcion:"Elegante juego de copas para vino.", especificaciones:[]},
+    {codigo:"CR002", nombre:"Vasos Altos de Agua", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR002.jpg", colores:["transparente"], descripcion:"Set de vasos altos ideales para agua o jugos.", especificaciones:[]},
+    {codigo:"CR003", nombre:"Copas de Champán", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR003.jpg", colores:["transparente"], descripcion:"Copas estilizadas para brindis especiales.", especificaciones:[]},
+    {codigo:"CR004", nombre:"Vasos Bajos Whiskernos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR004.jpg", colores:["transparente"], descripcion:"Vasos bajos robustos, perfectos para licores.", especificaciones:[]},
+    {codigo:"CR005", nombre:"Juego de vasos para whisky", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR005.jpg", colores:["transparente"], descripcion:"Elegante juego de vasos diseñados para whisky.", especificaciones:[]},
+    {codigo:"CR006", nombre:"Juego de 6 vasos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR006.jpg", colores:["transparente"], descripcion:"Set completo de 6 vasos ideales para uso diario.", especificaciones:[]},
+    {codigo:"CR007", nombre:"Platos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR007.jpg", colores:["transparente"], descripcion:"Platos de cristal elegantes y resistentes. Incluye variantes.", especificaciones:[]},
+    {codigo:"CR008", nombre:"Platos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR008.jpg", colores:["transparente"], descripcion:"Platos de cristal elegantes y resistentes.", especificaciones:[]},
+    {codigo:"CR009", nombre:"Juego de vasos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR009.jpg", colores:["transparente"], descripcion:"Juego de vasos clásicos.", especificaciones:[]},
+    {codigo:"CR010", nombre:"Juegos de vasos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR010.jpg", colores:["transparente"], descripcion:"Variedad de juegos de vasos para todas las ocasiones.", especificaciones:[]},
+    {codigo:"CR012", nombre:"Dispensador de jabón líquido", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR012.jpg", colores:["transparente"], descripcion:"Elegante dispensador de cristal para jabón líquido.", especificaciones:[]},
+    {codigo:"CR014", nombre:"Tequilero", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR014.jpg", colores:["transparente"], descripcion:"Vaso tequilero clásico.", especificaciones:[]},
+    {codigo:"CR015", nombre:"Juego de tequilero", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR015.jpg", colores:["transparente"], descripcion:"Set de vasos tequileros para compartir.", especificaciones:[]},
+    {codigo:"CR016", nombre:"Juego de 6 vasos de colores", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR016.jpg", colores:["transparente"], descripcion:"Divertido juego de 6 vasos con detalles en colores.", especificaciones:[]},
+    {codigo:"CR017", nombre:"Tequilero", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR017.jpg", colores:["transparente"], descripcion:"Vaso tequilero de diseño especial.", especificaciones:[]},
+    {codigo:"CR018", nombre:"Juego de jarra con 4 vasos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR018.jpg", colores:["transparente"], descripcion:"Práctico juego que incluye una jarra y 4 vasos a juego.", especificaciones:[]},
+    {codigo:"CR019", nombre:"Juego de jarra con vasos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR019.jpg", colores:["transparente"], descripcion:"Completo set de jarra y vasos para tus bebidas.", especificaciones:[]},
+    {codigo:"CR020", nombre:"Cenicero", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR020.jpg", colores:["transparente"], descripcion:"Cenicero de cristal robusto y elegante.", especificaciones:[]},
+    {codigo:"CR021", nombre:"Juego de vasos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR021.jpg", colores:["transparente"], descripcion:"Juego de vasos de cristal.", especificaciones:[]},
+    {codigo:"CR022", nombre:"Juego de 4 tazas de leche", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR022.jpg", colores:["transparente"], descripcion:"Hermoso juego de 4 tazas ideales para leche o café.", especificaciones:[]},
+    {codigo:"CR023", nombre:"Juego de vasos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR023.jpg", colores:["transparente"], descripcion:"Juego de vasos elegantes.", especificaciones:[]},
+    {codigo:"CR025", nombre:"Tequilero", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR025.jpg", colores:["transparente"], descripcion:"Vaso tequilero de alta calidad.", especificaciones:[]},
 
-    // VARIOS
-    {codigo:"VR002", nombre:"Sobrecama con fundas", activo:true, categoria:"varios", imagen:"img/varios/VR002.jpg", colores:["negro"], descripcion:"Elegante sobrecama que incluye fundas a juego."},
-    {codigo:"VR003", nombre:"Juego de pozuelo trae 7", activo:true, categoria:"varios", imagen:"img/varios/VR003.jpg", colores:["blanco"], descripcion:"Set completo de 7 pozuelos de diferentes tamaños."},
-    {codigo:"VR004", nombre:"Juego de 3 pozuelos", activo:true, categoria:"varios", imagen:"img/varios/VR004.jpg", colores:["azul"], descripcion:"Práctico juego de 3 pozuelos para tu cocina."},
-    {codigo:"VR005", nombre:"Set de baño 4 piezas", activo:true, categoria:"varios", imagen:"img/varios/VR005.jpg", colores:["blanco"], descripcion:"Completo set de accesorios para baño de 4 piezas."},
-    {codigo:"VR006", nombre:"Vasos plásticos resistentes al calor", activo:true, categoria:"varios", imagen:"img/varios/VR006.jpg", colores:["rojo"], descripcion:"Vasos de plástico duradero, ideales para bebidas calientes."},
-    {codigo:"VR007", nombre:"Vasos de cerámica", activo:true, categoria:"varios", imagen:"img/varios/VR007.jpg", colores:["blanco"], descripcion:"Vasos de cerámica de alta calidad."},
-    {codigo:"VR008", nombre:"Pomos de silicona", activo:true, categoria:"varios", imagen:"img/varios/VR008.jpg", colores:["negro"], descripcion:"Pomos flexibles de silicona, libres de BPA."},
-    {codigo:"VR009", nombre:"Tenis Converse", activo:true, categoria:"varios", imagen:"img/varios/VR009.jpg", colores:["azul"], descripcion:"Clásicos tenis estilo Converse, cómodos y duraderos."},
-    {codigo:"VR010", nombre:"Pomos de agua", activo:true, categoria:"varios", imagen:"img/varios/VR010.jpg", colores:["blanco"], descripcion:"Pomos de agua reutilizables y ecológicos."},
-    {codigo:"VR012", nombre:"Bolsitos de piel y tela", activo:true, categoria:"varios", imagen:"img/varios/VR012.jpg", colores:["blanco"], descripcion:"Bolsitos combinados de piel y tela. Incluye modelos variados. Incluye variantes 26 y 27."},
-    {codigo:"VR013", nombre:"Termo de café 0.45L", activo:true, categoria:"varios", imagen:"img/varios/VR013.jpg", colores:["negro"], descripcion:"Termo compacto de 0.45L para mantener tu café caliente."},
-    {codigo:"VR014", nombre:"Hisopo de baño", activo:true, categoria:"varios", imagen:"img/varios/VR014.jpg", colores:["rosa"], descripcion:"Hisopo de baño con base, diseño discreto."},
-    {codigo:"VR015", nombre:"Termo de café 1L", activo:true, categoria:"varios", imagen:"img/varios/VR015.jpg", colores:["blanco"], descripcion:"Termo de gran capacidad (1L) para café."},
-    {codigo:"VR017", nombre:"Especiero giratorio", activo:true, categoria:"varios", imagen:"img/varios/VR017.jpg", colores:["blanco"], descripcion:"Práctico especiero giratorio para organizar tus condimentos."},
-    {codigo:"VR018", nombre:"Vasos de cerámica", activo:true, categoria:"varios", imagen:"img/varios/VR018.jpg", colores:["negro"], descripcion:"Vasos de cerámica con diseño moderno."},
-    {codigo:"VR020", nombre:"Juego de 3 pozuelos con su cucharita", activo:true, categoria:"varios", imagen:"img/varios/VR020.jpg", colores:["blanco"], descripcion:"Set de 3 pozuelos que incluyen cucharita."},
-    {codigo:"VR023", nombre:"Pozuelos cuadrados trae 7", activo:true, categoria:"varios", imagen:"img/varios/VR023.jpg", colores:["negro"], descripcion:"Set de 7 pozuelos de forma cuadrada."},
-    {codigo:"VR024", nombre:"Pozuelos en forma circular trae 7", activo:true, categoria:"varios", imagen:"img/varios/VR024.jpg", colores:["dorado"], descripcion:"Set de 7 pozuelos de forma circular."},
-    {codigo:"VR026", nombre:"Bolsitos de piel y tela", activo:true, categoria:"varios", imagen:"img/varios/VR026.jpg", colores:["verde"], descripcion:"Variante de bolsitos de piel y tela."},
-    {codigo:"VR027", nombre:"Bolsitos de piel y tela", activo:true, categoria:"varios", imagen:"img/varios/VR027.jpg", colores:["blanco"], descripcion:"Variante de bolsitos de piel y tela."},
-    {codigo:"VR028", nombre:"Pinzas de cocina", activo:true, categoria:"varios", imagen:"img/varios/VR028.jpg", colores:["negro"], descripcion:"Pinzas de cocina resistentes y prácticas."}
+    // --- CALZADO ---
+    {codigo:"CZ002", nombre:"Calzado Cómodo", activo:true, categoria:"calzado", imagen:"img/calzado/CZ002.jpg", colores:["azul"], descripcion:"Calzado cómodo para uso diario.", especificaciones:[]},
+    {codigo:"CZ003", nombre:"Calzado Cómodo", activo:true, categoria:"calzado", imagen:"img/calzado/CZ003.jpg", colores:["negro"], descripcion:"Calzado cómodo para uso diario.", especificaciones:[]},
+    {codigo:"CZ004", nombre:"Calzado Cómodo", activo:true, categoria:"calzado", imagen:"img/calzado/CZ004.jpg", colores:["rojo"], descripcion:"Calzado cómodo para uso diario.", especificaciones:[]},
+    {codigo:"CZ005", nombre:"Calzado Cómodo", activo:true, categoria:"calzado", imagen:"img/calzado/CZ005.jpg", colores:["blanco"], descripcion:"Calzado cómodo para uso diario.", especificaciones:[]},
+    {codigo:"CZ006", nombre:"Calzado Cómodo", activo:true, categoria:"calzado", imagen:"img/calzado/CZ006.jpg", colores:["negro"], descripcion:"Calzado cómodo para uso diario.", especificaciones:[]},
+    {codigo:"CZ007", nombre:"Calzado Cómodo", activo:true, categoria:"calzado", imagen:"img/calzado/CZ007.jpg", colores:["azul"], descripcion:"Calzado cómodo para uso diario.", especificaciones:[]},
+    {codigo:"CZ008", nombre:"Calzado Cómodo", activo:true, categoria:"calzado", imagen:"img/calzado/CZ008.jpg", colores:["rosa"], descripcion:"Calzado cómodo para uso diario.", especificaciones:[]},
+
+    // --- VARIOS ---
+    {codigo:"VR002", nombre:"Sobrecama con fundas", activo:true, categoria:"varios", imagen:"img/varios/VR002.jpg", colores:["negro"], descripcion:"Elegante sobrecama que incluye fundas.", especificaciones:[]},
+    {codigo:"VR003", nombre:"Juego de pozuelo trae 7", activo:true, categoria:"varios", imagen:"img/varios/VR003.jpg", colores:["blanco"], descripcion:"Set completo de 7 pozuelos.", especificaciones:[]},
+    {codigo:"VR004", nombre:"Juego de 3 pozuelos", activo:true, categoria:"varios", imagen:"img/varios/VR004.jpg", colores:["azul"], descripcion:"Práctico juego de 3 pozuelos.", especificaciones:[]},
+    {codigo:"VR005", nombre:"Set de baño 4 piezas", activo:true, categoria:"varios", imagen:"img/varios/VR005.jpg", colores:["blanco"], descripcion:"Set de accesorios para baño.", especificaciones:[]},
+    {codigo:"VR006", nombre:"Vasos plásticos resistentes", activo:true, categoria:"varios", imagen:"img/varios/VR006.jpg", colores:["rojo"], descripcion:"Vasos de plástico duradero.", especificaciones:[]},
+    {codigo:"VR007", nombre:"Vasos de cerámica", activo:true, categoria:"varios", imagen:"img/varios/VR007.jpg", colores:["blanco"], descripcion:"Vasos de cerámica de alta calidad.", especificaciones:[]},
+    {codigo:"VR008", nombre:"Pomos de silicona", activo:true, categoria:"varios", imagen:"img/varios/VR008.jpg", colores:["negro"], descripcion:"Pomos flexibles de silicona.", especificaciones:[]},
+    {codigo:"VR009", nombre:"Tenis Converse", activo:true, categoria:"varios", imagen:"img/varios/VR009.jpg", colores:["azul"], descripcion:"Clásicos tenis estilo Converse.", especificaciones:[]},
+    {codigo:"VR010", nombre:"Pomos de agua", activo:true, categoria:"varios", imagen:"img/varios/VR010.jpg", colores:["blanco"], descripcion:"Pomos de agua reutilizables.", especificaciones:[]},
+    {codigo:"VR012", nombre:"Bolsitos de piel y tela", activo:true, categoria:"varios", imagen:"img/varios/VR012.jpg", colores:["blanco"], descripcion:"Bolsitos combinados. Incluye variantes.", especificaciones:[]},
+    {codigo:"VR013", nombre:"Termo de café 0.45L", activo:true, categoria:"varios", imagen:"img/varios/VR013.jpg", colores:["negro"], descripcion:"Termo compacto de 0.45L.", especificaciones:[]},
+    {codigo:"VR014", nombre:"Hisopo de baño", activo:true, categoria:"varios", imagen:"img/varios/VR014.jpg", colores:["rosa"], descripcion:"Hisopo de baño con base.", especificaciones:[]},
+    {codigo:"VR015", nombre:"Termo de café 1L", activo:true, categoria:"varios", imagen:"img/varios/VR015.jpg", colores:["blanco"], descripcion:"Termo de gran capacidad.", especificaciones:[]},
+    {codigo:"VR017", nombre:"Especiero giratorio", activo:true, categoria:"varios", imagen:"img/varios/VR017.jpg", colores:["blanco"], descripcion:"Práctico especiero giratorio.", especificaciones:[]},
+    {codigo:"VR018", nombre:"Vasos de cerámica", activo:true, categoria:"varios", imagen:"img/varios/VR018.jpg", colores:["negro"], descripcion:"Vasos de cerámica modernos.", especificaciones:[]},
+    {codigo:"VR020", nombre:"Juego de 3 pozuelos con cucharita", activo:true, categoria:"varios", imagen:"img/varios/VR020.jpg", colores:["blanco"], descripcion:"Set de 3 pozuelos con cucharita.", especificaciones:[]},
+    {codigo:"VR023", nombre:"Pozuelos cuadrados trae 7", activo:true, categoria:"varios", imagen:"img/varios/VR023.jpg", colores:["negro"], descripcion:"Set de 7 pozuelos cuadrados.", especificaciones:[]},
+    {codigo:"VR024", nombre:"Pozuelos circulares trae 7", activo:true, categoria:"varios", imagen:"img/varios/VR024.jpg", colores:["dorado"], descripcion:"Set de 7 pozuelos circulares.", especificaciones:[]},
+    {codigo:"VR026", nombre:"Bolsitos de piel y tela", activo:true, categoria:"varios", imagen:"img/varios/VR026.jpg", colores:["verde"], descripcion:"Variante de bolsitos.", especificaciones:[]},
+    {codigo:"VR027", nombre:"Bolsitos de piel y tela", activo:true, categoria:"varios", imagen:"img/varios/VR027.jpg", colores:["blanco"], descripcion:"Variante de bolsitos.", especificaciones:[]},
+    {codigo:"VR028", nombre:"Pinzas de cocina", activo:true, categoria:"varios", imagen:"img/varios/VR028.jpg", colores:["negro"], descripcion:"Pinzas de cocina prácticas.", especificaciones:[]}
 ];
 
 let colorSeleccionado = null;
 
 function renderProducts(lista = productos) {
-    ['sabanas', 'cristaleria', 'calzado', 'varios'].forEach(cat => {
-        const grid = document.getElementById(`grid-${cat}`);
+    const cats = ['sabanas', 'juego_sabanas', 'cristaleria', 'calzado', 'varios'];
+    
+    cats.forEach(c => {
+        const grid = document.getElementById(`grid-${c}`);
         if(grid) {
             grid.innerHTML = '';
-            document.getElementById(`sec-${cat}`).style.display = 'block';
+            document.getElementById(`sec-${c}`).style.display = 'block';
         }
     });
 
     let encontrados = false;
 
     lista.forEach(p => {
-        if (!p.activo) return; // Si es false, no se muestra
+        if (!p.activo) return;
 
         const grid = document.getElementById(`grid-${p.categoria}`);
         if (grid) {
-            // El onerror hace que si la foto no existe, la tarjeta se oculte sola
             grid.innerHTML += `
             <div class="card">
                 <span class="code-tag">${p.codigo}</span>
@@ -344,6 +392,7 @@ function renderProducts(lista = productos) {
                     </button>
                 </div>
                 <div class="card-info">
+                    <div class="card-cat">${getCategoryName(p.categoria)}</div>
                     <div class="card-title">${p.nombre}</div>
                 </div>
             </div>`;
@@ -351,11 +400,12 @@ function renderProducts(lista = productos) {
         }
     });
 
+    checkEmptySections();
     document.getElementById('no-results').style.display = encontrados ? 'none' : 'block';
 }
 
 function checkEmptySections() {
-    ['sabanas', 'cristaleria', 'calzado', 'varios'].forEach(cat => {
+    ['sabanas', 'juego_sabanas', 'cristaleria', 'calzado', 'varios'].forEach(cat => {
         const grid = document.getElementById(`grid-${cat}`);
         if (grid && grid.children.length === 0) {
             document.getElementById(`sec-${cat}`).style.display = 'none';
@@ -403,17 +453,29 @@ function toggleMenu() {
     document.getElementById('navMenu').classList.toggle('active');
 }
 
+function getCategoryName(c){return{sabanas:'Sábanas Solas',juego_sabanas:'Juegos de Sábanas',cristaleria:'Cristalería',calzado:'Calzado',varios:'Varios'}[c]||c}
+
 function openModal(codigo) {
     const p = productos.find(x => x.codigo === codigo);
     if(!p) return;
     
+    let specsHtml = '';
+    if(p.especificaciones && p.especificaciones.length > 0) {
+        specsHtml = `<div style="margin-top:15px; font-size:13px; color:#555;">
+            <strong>Detalles:</strong><br>
+            ${p.especificaciones.map(e => `• ${e}`).join('<br>')}
+        </div>`;
+    }
+
     document.getElementById('modalContent').innerHTML = `
         <img src="${p.imagen}" class="modal-img" onclick="openZoom('${p.imagen}')" title="Clic para ampliar">
         <h2 style="font-size:22px;margin-bottom:10px">${p.nombre}</h2>
-        <div style="background:#f0f0f0;display:inline-block;padding:5px 10px;border-radius:5px;font-weight:600;margin-bottom:20px;color:#333">CÓDIGO: ${p.codigo}</div>
-        <p style="color:#666;margin-bottom:25px">${p.descripcion}</p>
+        <div style="background:#f0f0f0;display:inline-block;padding:5px 10px;border-radius:5px;font-weight:600;margin-bottom:15px;color:#333">CÓDIGO: ${p.codigo}</div>
+        <p style="color:#666;line-height:1.6">${p.descripcion}</p>
+        ${specsHtml}
+        <br>
         <button onclick="sendWhatsapp('${p.codigo}', '${p.nombre}')" 
-            style="background:#25d366;color:#fff;border:none;padding:12px 30px;border-radius:25px;font-size:16px;cursor:pointer;font-weight:600;width:100%">
+            style="background:#25d366;color:#fff;border:none;padding:12px 30px;border-radius:25px;font-size:16px;cursor:pointer;font-weight:600;width:100%;margin-top:20px;">
             <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
         </button>
     `;
@@ -434,7 +496,6 @@ function sendWhatsapp(code, name) {
     window.open(`https://wa.me/5359094266?text=Hola, me interesa el producto: ${name} (Código: ${code})`, '_blank');
 }
 
-// SLIDER
 let slideIndex = 0;
 function showSlides() {
     const slides = document.querySelectorAll('.hero-slide');
@@ -449,6 +510,7 @@ function showSlides() {
 window.onload = function() {
     renderProducts();
     showSlides();
+    document.getElementById('loader').style.display = 'none';
 };
 </script>
 </body>
