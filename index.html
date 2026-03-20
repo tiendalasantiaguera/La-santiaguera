@@ -5,51 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Santiaguera | Tienda Online</title>
     
-    <!-- LOGO PARA GOOGLE Y NAVEGADORES -->
-    <link rel="icon" type="image/png" href="img/logo.png" sizes="192x192">
-    <link rel="apple-touch-icon" href="img/logo.png">
+    <!-- CÓDIGO ACTUALIZADO DEL LOGO (FAVICON) -->
+    <link rel="icon" type="image/png" href="img/favicon.png" sizes="512x512">
+    <link rel="apple-touch-icon" href="img/favicon.png">
     <meta name="theme-color" content="#ffffff">
 
-    <!-- Pega aquí la etiqueta de verificación de Google Search Console cuando la tengas -->
-    <!-- <meta name="google-site-verification" content="TU_CODIGO_AQUI" /> -->
+    <!-- PEGA AQUÍ TU CÓDIGO DE GOOGLE SEARCH CONSOLE -->
+    <!-- <meta name="google-site-verification" content="PEGAR_AQUI" /> -->
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* ESTILO MINIMALISTA "FLAT" */
         *{margin:0;padding:0;box-sizing:border-box}
         :root{--text:#333;--accent:#e74c3c;--bg:#fff;--gray:#f5f5f5}
         body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.5}
         a{text-decoration:none;color:inherit}
         .container{max-width:1200px;margin:0 auto;padding:0 20px}
         
-        /* HEADER LIMPIO */
         header{background:#fff;position:sticky;top:0;z-index:1000;padding:20px 0;border-bottom:1px solid #eee}
         .header-grid{display:flex;justify-content:space-between;align-items:center;gap:20px}
-        
         .logo{font-size:24px;font-weight:700;letter-spacing:-0.5px;color:var(--text);display:flex;align-items:center;gap:10px}
-        .logo img{height:40px;width:auto}
+        .logo img{height:40px;width:auto;border-radius:8px}
         .logo span{color:var(--accent)}
         
-        /* BUSCADOR SIMPLE */
         .search-wrapper{flex:1;max-width:500px;background:var(--gray);border-radius:8px;padding:5px 15px;display:flex}
         .search-wrapper input{border:none;background:transparent;width:100%;outline:none;padding:8px;font-size:14px}
         .search-wrapper button{background:none;border:none;color:#888;cursor:pointer}
         
-        /* NAV SIMPLE */
         .nav-links{display:flex;gap:25px}
         .nav-link{font-weight:500;color:#666;font-size:14px;position:relative;cursor:pointer}
         .nav-link:hover{color:var(--text)}
         .mobile-btn{display:none;font-size:20px;background:none;border:none;cursor:pointer}
 
-        /* FILTROS INTEGRADOS */
         .filter-container{padding:15px 0;border-bottom:1px solid #eee;display:flex;justify-content:center;gap:15px;flex-wrap:wrap;align-items:center}
         .color-dots{display:flex;gap:8px}
         .dot{width:20px;height:20px;border-radius:50%;cursor:pointer;border:1px solid #ddd;transition:transform 0.2s}
         .dot:hover,.dot.active{transform:scale(1.2);border-color:#333}
         .reset-btn{font-size:13px;color:#888;background:none;border:none;border-bottom:1px solid #ccc;cursor:pointer}
 
-        /* HERO SECTION */
         .hero{height:350px;background:#f0f0f0;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
         .hero-slide{position:absolute;top:0;left:0;width:100%;height:100%;background-size:cover;background-position:center;opacity:0;transition:opacity 1s}
         .hero-slide.active{opacity:1}
@@ -58,11 +51,9 @@
         .hero-text h1{font-size:40px;font-weight:700;margin-bottom:10px}
         .hero-text p{font-size:18px;opacity:0.9}
 
-        /* CATEGORIAS VERTICALES */
         .category-section{margin-top:60px}
         .cat-title{font-size:22px;font-weight:600;margin-bottom:25px;padding-left:15px;border-left:4px solid var(--accent)}
         
-        /* TARJETAS DE PRODUCTO MINIMALISTAS */
         .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:30px}
         .card{background:#fff;transition:0.3s;position:relative}
         .card:hover{transform:translateY(-5px)}
@@ -71,10 +62,8 @@
         .card-img img{width:100%;height:100%;object-fit:cover;transition:0.5s}
         .card:hover .card-img img{transform:scale(1.05)}
         
-        /* CÓDIGO FLOTANTE (Identificador) */
         .code-tag{position:absolute;top:10px;right:10px;background:rgba(255,255,255,0.95);padding:4px 8px;border-radius:6px;font-size:11px;font-weight:700;color:#333;box-shadow:0 2px 5px rgba(0,0,0,0.1)}
         
-        /* BOTON FLOTANTE CARD */
         .card-btn{position:absolute;bottom:15px;right:15px;width:40px;height:40px;border-radius:50%;background:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 10px rgba(0,0,0,0.1);opacity:0;transform:translateY(10px);transition:0.3s}
         .card:hover .card-btn{opacity:1;transform:translateY(0)}
         .card-btn:hover{background:var(--accent);color:#fff}
@@ -83,25 +72,21 @@
         .card-title{font-size:15px;font-weight:500;color:#333;margin-bottom:4px}
         .card-cat{font-size:12px;color:#888;text-transform:uppercase;letter-spacing:0.5px}
 
-        /* FOOTER */
         footer{margin-top:80px;background:#f9f9f9;padding:60px 0;text-align:center;border-top:1px solid #eee}
         .footer-text{max-width:600px;margin:0 auto 20px;color:#666}
         .footer-address{font-weight:500;margin-bottom:20px;color:#333}
-        .socials{display:flex;justify-content:center;gap:20px;font-size:20px;color:#888}
+        .socials{display:flex;justify-content:center;gap:20px;font-size:24px;color:#888}
         .socials a:hover{color:var(--accent)}
 
-        /* EXTRAS */
         .whatsapp-float{position:fixed;bottom:25px;right:25px;width:55px;height:55px;background:#25d366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 5px 15px rgba(0,0,0,0.2);z-index:999;transition:0.3s}
         .whatsapp-float:hover{transform:scale(1.1)}
         
-        /* MODAL */
         .modal-wrap{position:fixed;inset:0;background:rgba(255,255,255,0.98);z-index:2000;display:none;justify-content:center;align-items:center;padding:20px}
         .modal-wrap.active{display:flex}
         .modal-box{background:#fff;max-width:500px;width:100%;border:1px solid #eee;box-shadow:0 20px 50px rgba(0,0,0,0.1);border-radius:15px;padding:30px;position:relative;text-align:center}
         .close-btn{position:absolute;top:15px;right:15px;background:none;border:none;font-size:24px;cursor:pointer;color:#888}
         .modal-img{width:100%;height:300px;object-fit:cover;border-radius:10px;margin-bottom:20px;cursor:zoom-in}
-
-        /* ZOOM (LIGHTBOX) */
+        
         .zoom-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:3000;display:none;justify-content:center;align-items:center;cursor:zoom-out}
         .zoom-overlay.active{display:flex}
         .zoom-overlay img{max-width:95%;max-height:95%;border-radius:5px;box-shadow:0 0 20px rgba(0,0,0,0.5)}
@@ -120,9 +105,11 @@
 <header>
     <div class="container header-grid">
         <a href="#" class="logo">
-            <img src="img/logo.png" alt="Logo" onerror="this.style.display='none'"> 
+            <!-- AQUÍ TAMBIÉN BUSCA EL NUEVO ARCHIVO favicon.png -->
+            <img src="img/favicon.png" alt="Logo" onerror="this.style.display='none'"> 
             La <span>Santiaguera</span>
         </a>
+        
         <div class="search-wrapper">
             <input type="text" id="searchInput" placeholder="Buscar productos...">
             <button onclick="filterProducts()"><i class="fas fa-search"></i></button>
@@ -137,23 +124,21 @@
     </div>
 </header>
 
-<!-- FILTROS -->
 <div class="filter-container">
     <span style="font-size:13px;color:#888">Color:</span>
     <div class="color-dots">
-        <span class="dot" style="background:#fff" onclick="filterColor('blanco',this)" title="Blanco"></span>
-        <span class="dot" style="background:#000" onclick="filterColor('negro',this)" title="Negro"></span>
-        <span class="dot" style="background:#e74c3c" onclick="filterColor('rojo',this)" title="Rojo"></span>
-        <span class="dot" style="background:#3498db" onclick="filterColor('azul',this)" title="Azul"></span>
-        <span class="dot" style="background:#27ae60" onclick="filterColor('verde',this)" title="Verde"></span>
-        <span class="dot" style="background:#f39c12" onclick="filterColor('dorado',this)" title="Dorado"></span>
-        <span class="dot" style="background:#9b59b6" onclick="filterColor('morado',this)" title="Morado"></span>
-        <span class="dot" style="background:#ffc0cb" onclick="filterColor('rosa',this)" title="Rosa"></span>
+        <span class="dot" style="background:#fff" onclick="filterColor('blanco',this)"></span>
+        <span class="dot" style="background:#000" onclick="filterColor('negro',this)"></span>
+        <span class="dot" style="background:#e74c3c" onclick="filterColor('rojo',this)"></span>
+        <span class="dot" style="background:#3498db" onclick="filterColor('azul',this)"></span>
+        <span class="dot" style="background:#27ae60" onclick="filterColor('verde',this)"></span>
+        <span class="dot" style="background:#f39c12" onclick="filterColor('dorado',this)"></span>
+        <span class="dot" style="background:#9b59b6" onclick="filterColor('morado',this)"></span>
+        <span class="dot" style="background:#ffc0cb" onclick="filterColor('rosa',this)"></span>
     </div>
     <button class="reset-btn" onclick="resetFilters()">Ver todos</button>
 </div>
 
-<!-- HERO BANNER -->
 <div class="hero">
     <div class="hero-slide active" style="background-image:url('img/cristaleria/CR005.jpg')"></div>
     <div class="hero-slide" style="background-image:url('img/sabanas/SBJ001.jpg')"></div>
@@ -167,35 +152,29 @@
 </div>
 
 <div class="container">
-    
-    <!-- SÁBANAS -->
     <div class="category-section" id="sec-sabanas">
         <h2 class="cat-title">Sábanas</h2>
         <div class="grid" id="grid-sabanas"></div>
     </div>
 
-    <!-- CRISTALERÍA -->
     <div class="category-section" id="sec-cristaleria">
         <h2 class="cat-title">Cristalería</h2>
         <div class="grid" id="grid-cristaleria"></div>
     </div>
 
-    <!-- CALZADO -->
     <div class="category-section" id="sec-calzado">
         <h2 class="cat-title">Calzado</h2>
         <div class="grid" id="grid-calzado"></div>
     </div>
 
-    <!-- VARIOS -->
     <div class="category-section" id="sec-varios">
         <h2 class="cat-title">Varios</h2>
         <div class="grid" id="grid-varios"></div>
     </div>
 
     <div id="no-results" style="display:none;text-align:center;padding:50px;color:#888">
-        No se encontraron productos con tu búsqueda.
+        No se encontraron productos disponibles.
     </div>
-
 </div>
 
 <footer>
@@ -210,12 +189,13 @@
             <i class="fas fa-phone"></i> +5359094266
         </div>
         <div class="socials">
-            <a href="https://wa.me/5359094266"><i class="fab fa-whatsapp"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/5359094266" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <!-- AQUÍ ESTÁ EL ENLACE DE INSTAGRAM ACTUALIZADO -->
+            <a href="https://www.instagram.com/tiendalasantiaguera" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
     </div>
 </footer>
+
 <!-- MODALES -->
 <div class="modal-wrap" id="productModal">
     <div class="modal-box">
@@ -232,12 +212,6 @@
 <a href="https://wa.me/5359094266" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
 <script>
-/* 
-   SISTEMA DE GESTIÓN SIMPLE:
-   1. Para AGOTADO: Cambia activo:true por activo:false
-   2. Para NUEVO: Copia una línea y cambia los datos.
-*/
-
 const productos = [
     // SÁBANAS
     {codigo:"SBJ001", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"sabanas", imagen:"img/sabanas/SBJ001.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad."},
@@ -333,7 +307,6 @@ function renderProducts(lista = productos) {
 
         const grid = document.getElementById(`grid-${p.categoria}`);
         if (grid) {
-            // El onerror hace que si la foto no existe, la tarjeta se oculte sola
             grid.innerHTML += `
             <div class="card">
                 <span class="code-tag">${p.codigo}</span>
