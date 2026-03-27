@@ -1,0 +1,8 @@
+{
+  "name": "la-santiaguera-tienda",
+  "version": "1.0.0",
+  "description": "Tienda online La Santiaguera",
+  "scripts": {
+    "build": "node generate-manifest.js"
+  }
+}
