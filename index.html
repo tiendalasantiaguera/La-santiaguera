@@ -5,779 +5,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Santiaguera | Tienda Online</title>
     
-    <!-- LOGO -->
+    <!-- LOGO PARA GOOGLE Y NAVEGADORES -->
     <link rel="icon" type="image/png" href="img/favicon.png" sizes="512x512">
     <link rel="apple-touch-icon" href="img/favicon.png">
     <meta name="theme-color" content="#ffffff">
+
+    <!-- VERIFICACIÓN DE GOOGLE SEARCH CONSOLE -->
     <meta name="google-site-verification" content="Co4Foj1f0ySqLCSLEbfWfj9BHuY6mPE3OfaW8T7gydg" />
 
-    <!-- FONTS & ICONS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
     <style>
-        /* ========== RESET & VARIABLES ========== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        :root {
-            --text: #1a1a1a;
-            --accent: #c0392b;
-            --accent-light: #e74c3c;
-            --bg: #ffffff;
-            --gray-bg: #f8f9fa;
-            --border: #e9ecef;
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            font-size: 15px;
-            line-height: 1.5;
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-        
-        /* ========== HEADER ========== */
-        header {
-            background: var(--bg);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            padding: 16px 0;
-            border-bottom: 1px solid var(--border);
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.98);
-        }
-        
-        .header-grid {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .logo img {
-            height: 40px;
-            width: auto;
-            border-radius: 10px;
-        }
-        
-        .logo span {
-            color: var(--accent);
-        }
-        
-        .search-wrapper {
-            flex: 1;
-            max-width: 400px;
-            background: var(--gray-bg);
-            border-radius: 12px;
-            padding: 8px 16px;
-            display: flex;
-            align-items: center;
-            border: 1px solid var(--border);
-            transition: all 0.2s;
-        }
-        
-        .search-wrapper:focus-within {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.1);
-        }
-        
-        .search-wrapper input {
-            border: none;
-            background: transparent;
-            width: 100%;
-            outline: none;
-            padding: 8px;
-            font-size: 14px;
-        }
-        
-        .search-wrapper button {
-            background: none;
-            border: none;
-            color: #8e8e93;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-        
-        .nav-link {
-            font-weight: 500;
-            color: #5e5e66;
-            font-size: 14px;
-            padding: 8px 16px;
-            border-radius: 8px;
-            transition: all 0.2s;
-            cursor: pointer;
-        }
-        
-        .nav-link:hover {
-            background: var(--gray-bg);
-            color: var(--accent);
-        }
-        
-        .mobile-btn {
-            display: none;
-            font-size: 24px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 8px;
-        }
-        
-        /* ========== FILTERS ========== */
-        .filter-container {
-            padding: 20px 0;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            align-items: center;
-            background: var(--bg);
-        }
-        
-        .filter-label {
-            font-size: 13px;
-            font-weight: 500;
-            color: #6c6c74;
-        }
-        
-        .color-dots {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-        
-        .dot {
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            cursor: pointer;
-            border: 2px solid transparent;
-            transition: all 0.2s;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-        
-        .dot:hover {
-            transform: scale(1.1);
-        }
-        
-        .dot.active {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 2px rgba(192, 57, 43, 0.3);
-            transform: scale(1.1);
-        }
-        
-        .reset-btn {
-            font-size: 13px;
-            color: var(--accent);
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-weight: 500;
-            padding: 6px 12px;
-            border-radius: 6px;
-            transition: all 0.2s;
-        }
-        
-        .reset-btn:hover {
-            background: rgba(192, 57, 43, 0.1);
-        }
-        
-        /* ========== HERO ========== */
-        .hero {
-            height: 400px;
-            background: linear-gradient(135deg, #2c3e50, #1a2632);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transition: opacity 1s ease;
-        }
-        
-        .hero-slide.active {
-            opacity: 0.6;
-        }
-        
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.4);
-        }
-        
-        .hero-text {
-            position: relative;
-            z-index: 2;
-            color: #fff;
-        }
-        
-        .hero-text h1 {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            letter-spacing: -0.5px;
-        }
-        
-        .hero-text p {
-            font-size: 18px;
-            opacity: 0.9;
-        }
-        
-        /* ========== CATEGORY SECTIONS ========== */
-        .category-section {
-            margin-top: 60px;
-        }
-        
-        .cat-title {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 28px;
-            padding-left: 16px;
-            border-left: 4px solid var(--accent);
-            letter-spacing: -0.3px;
-        }
-        
-        /* ========== PRODUCT GRID ========== */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 28px;
-        }
-        
-        .card {
-            background: var(--bg);
-            border-radius: 16px;
-            overflow: hidden;
-            transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
-            border: 1px solid var(--border);
-            position: relative;
-        }
-        
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow);
-            border-color: transparent;
-        }
-        
-        .card-img {
-            height: 280px;
-            background: var(--gray-bg);
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .card-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .card:hover .card-img img {
-            transform: scale(1.05);
-        }
-        
-        .code-tag {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(4px);
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 600;
-            color: var(--text);
-            font-family: monospace;
-            letter-spacing: 0.5px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-        
-        .card-btn {
-            position: absolute;
-            bottom: 16px;
-            right: 16px;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: #fff;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            opacity: 0;
-            transform: translateY(10px);
-            transition: all 0.3s;
-            color: var(--text);
-            font-size: 18px;
-        }
-        
-        .card:hover .card-btn {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .card-btn:hover {
-            background: var(--accent);
-            color: #fff;
-        }
-        
-        .card-info {
-            padding: 16px;
-        }
-        
-        .card-cat {
-            font-size: 11px;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-        
-        .card-title {
-            font-size: 15px;
-            font-weight: 500;
-            color: var(--text);
-            line-height: 1.4;
-        }
-        
-        /* ========== FOOTER ========== */
-        footer {
-            margin-top: 80px;
-            background: var(--gray-bg);
-            padding: 48px 0;
-            text-align: center;
-            border-top: 1px solid var(--border);
-        }
-        
-        .footer-text h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
-        }
-        
-        .footer-text p {
-            max-width: 500px;
-            margin: 0 auto;
-            color: #6c6c74;
-            font-size: 14px;
-        }
-        
-        .footer-address {
-            margin: 24px 0;
-            font-size: 14px;
-            color: #5e5e66;
-        }
-        
-        .footer-address i {
-            margin-right: 6px;
-            color: var(--accent);
-        }
-        
-        .socials {
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            font-size: 24px;
-        }
-        
-        .socials a {
-            transition: color 0.2s;
-        }
-        
-        .socials a:hover {
-            color: var(--accent);
-        }
-        
-        /* ========== MODAL ========== */
-        .modal-wrap {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(8px);
-            z-index: 2000;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        
-        .modal-wrap.active {
-            display: flex;
-        }
-        
-        .modal-box {
-            background: var(--bg);
-            max-width: 550px;
-            width: 100%;
-            border-radius: 24px;
-            padding: 28px;
-            position: relative;
-            animation: modalFadeIn 0.3s ease;
-        }
-        
-        @keyframes modalFadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-        
-        .close-btn {
-            position: absolute;
-            top: 16px;
-            right: 20px;
-            background: none;
-            border: none;
-            font-size: 28px;
-            cursor: pointer;
-            color: #8e8e93;
-            transition: color 0.2s;
-        }
-        
-        .close-btn:hover {
-            color: var(--accent);
-        }
-        
-        .modal-img {
-            width: 100%;
-            height: 320px;
-            object-fit: cover;
-            border-radius: 16px;
-            margin-bottom: 20px;
-            cursor: zoom-in;
-        }
-        
-        .zoom-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 3000;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            cursor: zoom-out;
-        }
-        
-        .zoom-overlay.active {
-            display: flex;
-        }
-        
-        .zoom-overlay img {
-            max-width: 95%;
-            max-height: 95%;
-            border-radius: 8px;
-        }
-        
-        /* ========== LOADER ========== */
-        .loader-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--bg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10000;
-            transition: opacity 0.3s;
-        }
-        
-        .loader-overlay.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-        
-        .loader {
-            display: flex;
-            gap: 6px;
-        }
-        
-        .loader span {
-            width: 12px;
-            height: 12px;
-            background: var(--accent);
-            border-radius: 50%;
-            animation: bounce 0.6s infinite alternate;
-        }
-        
-        .loader span:nth-child(2) {
-            animation-delay: 0.2s;
-            background: var(--text);
-        }
-        
-        .loader span:nth-child(3) {
-            animation-delay: 0.4s;
-            background: #bdc3c7;
-        }
-        
-        @keyframes bounce {
-            to {
-                transform: translateY(-15px);
-            }
-        }
-        
-        /* ========== ADMIN PANEL ========== */
-        .admin-btn {
-            position: fixed;
-            bottom: 24px;
-            left: 24px;
-            width: 48px;
-            height: 48px;
-            background: var(--text);
-            color: #fff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            cursor: pointer;
-            z-index: 998;
-            opacity: 0.6;
-            transition: all 0.2s;
-            box-shadow: var(--shadow);
-        }
-        
-        .admin-btn:hover {
-            opacity: 1;
-            transform: scale(1.05);
-            background: var(--accent);
-        }
-        
-        .admin-panel {
-            display: none;
-            position: fixed;
-            bottom: 88px;
-            left: 24px;
-            background: var(--bg);
-            border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-            padding: 20px;
-            z-index: 999;
-            min-width: 260px;
-            border: 1px solid var(--border);
-        }
-        
-        .admin-panel.active {
-            display: block;
-            animation: fadeIn 0.2s ease;
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .admin-panel h4 {
-            margin-bottom: 16px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-        
-        .admin-panel button {
-            width: 100%;
-            margin-bottom: 10px;
-            padding: 10px;
-            border: 1px solid var(--border);
-            background: var(--gray-bg);
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 13px;
-            font-weight: 500;
-            transition: all 0.2s;
-        }
-        
-        .admin-panel button:hover {
-            background: var(--accent);
-            color: #fff;
-            border-color: var(--accent);
-        }
-        
-        .admin-panel small {
-            display: block;
-            margin-top: 12px;
-            color: #8e8e93;
-            font-size: 11px;
-            text-align: center;
-        }
-        
-        .status-badge {
-            display: inline-block;
-            background: #27ae60;
-            color: #fff;
-            font-size: 10px;
-            padding: 2px 8px;
-            border-radius: 12px;
-            margin-left: 8px;
-        }
-        
-        /* ========== WHATSAPP FLOAT ========== */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            width: 56px;
-            height: 56px;
-            background: #25d366;
-            color: #fff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
-            z-index: 999;
-            transition: all 0.2s;
-        }
-        
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
-        
-        /* ========== RESPONSIVE ========== */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 16px;
-            }
-            
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: fixed;
-                top: 72px;
-                left: 0;
-                width: 100%;
-                background: var(--bg);
-                padding: 20px;
-                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-                border-bottom: 1px solid var(--border);
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .mobile-btn {
-                display: block;
-            }
-            
-            .hero {
-                height: 300px;
-            }
-            
-            .hero-text h1 {
-                font-size: 32px;
-            }
-            
-            .grid {
-                grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-                gap: 20px;
-            }
-            
-            .card-img {
-                height: 240px;
-            }
-        }
-        
-        /* ========== UTILITY ========== */
-        .no-results {
-            text-align: center;
-            padding: 60px 20px;
-            color: #8e8e93;
-        }
-        
-        .no-results i {
-            font-size: 48px;
-            margin-bottom: 16px;
-            opacity: 0.5;
+        /* ESTILO MINIMALISTA "FLAT" */
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--text:#333;--accent:#e74c3c;--bg:#fff;--gray:#f5f5f5}
+        body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.5}
+        a{text-decoration:none;color:inherit}
+        .container{max-width:1200px;margin:0 auto;padding:0 20px}
+        
+        header{background:#fff;position:sticky;top:0;z-index:1000;padding:20px 0;border-bottom:1px solid #eee}
+        .header-grid{display:flex;justify-content:space-between;align-items:center;gap:20px}
+        .logo{font-size:24px;font-weight:700;letter-spacing:-0.5px;color:var(--text);display:flex;align-items:center;gap:10px}
+        .logo img{height:40px;width:auto;border-radius:8px}
+        .logo span{color:var(--accent)}
+        
+        .search-wrapper{flex:1;max-width:500px;background:var(--gray);border-radius:8px;padding:5px 15px;display:flex}
+        .search-wrapper input{border:none;background:transparent;width:100%;outline:none;padding:8px;font-size:14px}
+        .search-wrapper button{background:none;border:none;color:#888;cursor:pointer}
+        
+        .nav-links{display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
+        .nav-link{font-weight:500;color:#666;font-size:14px;position:relative;cursor:pointer;white-space:nowrap}
+        .nav-link:hover{color:var(--text)}
+        .mobile-btn{display:none;font-size:20px;background:none;border:none;cursor:pointer}
+
+        .filter-container{padding:15px 0;border-bottom:1px solid #eee;display:flex;justify-content:center;gap:15px;flex-wrap:wrap;align-items:center}
+        .color-dots{display:flex;gap:8px}
+        .dot{width:20px;height:20px;border-radius:50%;cursor:pointer;border:1px solid #ddd;transition:transform 0.2s}
+        .dot:hover,.dot.active{transform:scale(1.2);border-color:#333}
+        .reset-btn{font-size:13px;color:#888;background:none;border:none;border-bottom:1px solid #ccc;cursor:pointer}
+
+        .hero{height:350px;background:#f0f0f0;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden}
+        .hero-slide{position:absolute;top:0;left:0;width:100%;height:100%;background-size:cover;background-position:center;opacity:0;transition:opacity 1s}
+        .hero-slide.active{opacity:1}
+        .hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.3)}
+        .hero-text{position:relative;z-index:2;color:#fff}
+        .hero-text h1{font-size:40px;font-weight:700;margin-bottom:10px}
+        .hero-text p{font-size:18px;opacity:0.9}
+
+        .category-section{margin-top:60px}
+        .cat-title{font-size:22px;font-weight:600;margin-bottom:25px;padding-left:15px;border-left:4px solid var(--accent)}
+        
+        .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:30px}
+        .card{background:#fff;transition:0.3s;position:relative}
+        .card:hover{transform:translateY(-5px)}
+        
+        .card-img{height:250px;background:#f9f9f9;overflow:hidden;border-radius:12px;position:relative}
+        .card-img img{width:100%;height:100%;object-fit:cover;transition:0.5s}
+        .card:hover .card-img img{transform:scale(1.05)}
+        
+        .code-tag{position:absolute;top:10px;right:10px;background:rgba(255,255,255,0.95);padding:4px 8px;border-radius:6px;font-size:11px;font-weight:700;color:#333;box-shadow:0 2px 5px rgba(0,0,0,0.1)}
+        
+        .card-btn{position:absolute;bottom:15px;right:15px;width:40px;height:40px;border-radius:50%;background:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 10px rgba(0,0,0,0.1);opacity:0;transform:translateY(10px);transition:0.3s}
+        .card:hover .card-btn{opacity:1;transform:translateY(0)}
+        .card-btn:hover{background:var(--accent);color:#fff}
+
+        .card-info{padding-top:12px}
+        .card-title{font-size:15px;font-weight:500;color:#333;margin-bottom:4px}
+        .card-cat{font-size:12px;color:#888;text-transform:uppercase;letter-spacing:0.5px}
+
+        footer{margin-top:80px;background:#f9f9f9;padding:60px 0;text-align:center;border-top:1px solid #eee}
+        .footer-text{max-width:600px;margin:0 auto 20px;color:#666}
+        .footer-address{font-weight:500;margin-bottom:20px;color:#333}
+        .socials{display:flex;justify-content:center;gap:20px;font-size:24px;color:#888}
+        .socials a:hover{color:var(--accent)}
+
+        .whatsapp-float{position:fixed;bottom:25px;right:25px;width:55px;height:55px;background:#25d366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 5px 15px rgba(0,0,0,0.2);z-index:999;transition:0.3s}
+        .whatsapp-float:hover{transform:scale(1.1)}
+        
+        .modal-wrap{position:fixed;inset:0;background:rgba(255,255,255,0.98);z-index:2000;display:none;justify-content:center;align-items:center;padding:20px}
+        .modal-wrap.active{display:flex}
+        .modal-box{background:#fff;max-width:500px;width:100%;border:1px solid #eee;box-shadow:0 20px 50px rgba(0,0,0,0.1);border-radius:15px;padding:30px;position:relative;text-align:center}
+        .close-btn{position:absolute;top:15px;right:15px;background:none;border:none;font-size:24px;cursor:pointer;color:#888}
+        .modal-img{width:100%;height:300px;object-fit:cover;border-radius:10px;margin-bottom:20px;cursor:zoom-in}
+        
+        .zoom-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:3000;display:none;justify-content:center;align-items:center;cursor:zoom-out}
+        .zoom-overlay.active{display:flex}
+        .zoom-overlay img{max-width:95%;max-height:95%;border-radius:5px;box-shadow:0 0 20px rgba(0,0,0,0.5)}
+
+        /* LOADER */
+        .loader-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:#fff;display:flex;align-items:center;justify-content:center;z-index:10000;transition:.5s}
+        .loader-overlay.hidden{opacity:0;pointer-events:none}
+        .loader span{width:12px;height:12px;background:var(--accent);border-radius:50%;animation:bounce .6s infinite alternate;display:inline-block;margin:0 2px}
+        .loader span:nth-child(2){animation-delay:.2s;background:#333}
+        .loader span:nth-child(3){animation-delay:.4s;background:var(--gold)}
+        @keyframes bounce{to{transform:translateY(-15px)}}
+
+        @media(max-width:768px){
+            .nav-links{display:none;flex-direction:column;position:fixed;top:70px;left:0;width:100%;background:#fff;padding:20px;box-shadow:0 5px 10px rgba(0,0,0,0.05)}
+            .nav-links.active{display:flex}
+            .mobile-btn{display:block}
+            .hero{height:250px}
+            .hero-text h1{font-size:28px}
         }
     </style>
 </head>
 <body>
 
 <div class="loader-overlay" id="loader">
-    <div class="loader">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+    <div class="loader"><span></span><span></span><span></span></div>
 </div>
 
 <header>
     <div class="container header-grid">
         <a href="#" class="logo">
-            <img src="img/favicon.png" alt="Logo" onerror="this.style.display='none'">
+            <img src="img/favicon.png" alt="Logo" onerror="this.style.display='none'"> 
             La <span>Santiaguera</span>
         </a>
         
         <div class="search-wrapper">
-            <input type="text" id="searchInput" placeholder="Buscar productos por nombre, código o descripción...">
-            <button onclick="filterProducts()">
-                <i class="fas fa-search"></i>
-            </button>
+            <input type="text" id="searchInput" placeholder="Buscar productos...">
+            <button onclick="filterProducts()"><i class="fas fa-search"></i></button>
         </div>
-        
-        <button class="mobile-btn" onclick="toggleMenu()">
-            <i class="fas fa-bars"></i>
-        </button>
-        
+        <button class="mobile-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
         <div class="nav-links" id="navMenu">
             <a class="nav-link" onclick="scrollToId('sec-sabanas')">Sábanas Solas</a>
             <a class="nav-link" onclick="scrollToId('sec-juego_sabanas')">Juegos de Sábanas</a>
@@ -789,20 +138,18 @@
 </header>
 
 <div class="filter-container">
-    <span class="filter-label">Filtrar por color:</span>
+    <span style="font-size:13px;color:#888">Color:</span>
     <div class="color-dots">
-        <span class="dot" style="background:#ffffff" data-color="blanco" title="Blanco"></span>
-        <span class="dot" style="background:#1a1a1a" data-color="negro" title="Negro"></span>
-        <span class="dot" style="background:#e74c3c" data-color="rojo" title="Rojo"></span>
-        <span class="dot" style="background:#3498db" data-color="azul" title="Azul"></span>
-        <span class="dot" style="background:#27ae60" data-color="verde" title="Verde"></span>
-        <span class="dot" style="background:#f1c40f" data-color="dorado" title="Dorado"></span>
-        <span class="dot" style="background:#9b59b6" data-color="morado" title="Morado"></span>
-        <span class="dot" style="background:#ff69b4" data-color="rosa" title="Rosa"></span>
+        <span class="dot" style="background:#fff" onclick="filterColor('blanco',this)" title="Blanco"></span>
+        <span class="dot" style="background:#000" onclick="filterColor('negro',this)" title="Negro"></span>
+        <span class="dot" style="background:#e74c3c" onclick="filterColor('rojo',this)" title="Rojo"></span>
+        <span class="dot" style="background:#3498db" onclick="filterColor('azul',this)" title="Azul"></span>
+        <span class="dot" style="background:#27ae60" onclick="filterColor('verde',this)" title="Verde"></span>
+        <span class="dot" style="background:#f39c12" onclick="filterColor('dorado',this)" title="Dorado"></span>
+        <span class="dot" style="background:#9b59b6" onclick="filterColor('morado',this)" title="Morado"></span>
+        <span class="dot" style="background:#ffc0cb" onclick="filterColor('rosa',this)" title="Rosa"></span>
     </div>
-    <button class="reset-btn" onclick="resetFilters()">
-        <i class="fas fa-times-circle"></i> Limpiar filtros
-    </button>
+    <button class="reset-btn" onclick="resetFilters()">Ver todos</button>
 </div>
 
 <div class="hero">
@@ -818,61 +165,62 @@
     </div>
 </div>
 
-<main class="container">
+<div class="container">
+    
     <!-- SÁBANAS SOLAS -->
-    <section class="category-section" id="sec-sabanas">
+    <div class="category-section" id="sec-sabanas">
         <h2 class="cat-title">Sábanas Solas (Cameras Individuales)</h2>
         <div class="grid" id="grid-sabanas"></div>
-    </section>
+    </div>
 
     <!-- JUEGOS DE SÁBANAS -->
-    <section class="category-section" id="sec-juego_sabanas">
+    <div class="category-section" id="sec-juego_sabanas">
         <h2 class="cat-title">Juegos de Sábanas con Funda</h2>
         <div class="grid" id="grid-juego_sabanas"></div>
-    </section>
+    </div>
 
     <!-- CRISTALERÍA -->
-    <section class="category-section" id="sec-cristaleria">
+    <div class="category-section" id="sec-cristaleria">
         <h2 class="cat-title">Cristalería</h2>
         <div class="grid" id="grid-cristaleria"></div>
-    </section>
+    </div>
 
     <!-- CALZADO -->
-    <section class="category-section" id="sec-calzado">
+    <div class="category-section" id="sec-calzado">
         <h2 class="cat-title">Calzado</h2>
         <div class="grid" id="grid-calzado"></div>
-    </section>
+    </div>
 
     <!-- VARIOS -->
-    <section class="category-section" id="sec-varios">
+    <div class="category-section" id="sec-varios">
         <h2 class="cat-title">Varios</h2>
         <div class="grid" id="grid-varios"></div>
-    </section>
-
-    <div id="no-results" class="no-results" style="display: none;">
-        <i class="fas fa-search"></i>
-        <p>No se encontraron productos que coincidan con tu búsqueda.</p>
     </div>
-</main>
+
+    <div id="no-results" style="display:none;text-align:center;padding:50px;color:#888">
+        No se encontraron productos disponibles.
+    </div>
+
+</div>
 
 <footer>
     <div class="container">
         <div class="footer-text">
             <h3>La Santiaguera</h3>
-            <p>Tu tienda de confianza para productos del hogar. Calidad, estilo y los mejores precios para tu hogar y negocio.</p>
+            <p>Tu tienda de confianza para productos del hogar, incluye lo que tu hogar y negocio necesitan a precios asequibles y a tu alcance.</p>
         </div>
         <div class="footer-address">
-            <i class="fas fa-map-marker-alt"></i> Calzada San Miguel Del Padron, #10206 / 2da y 3ra. Rpto San Juan de los Pinos<br>
-            <i class="fas fa-phone"></i> +53 59094266
+            <i class="fas fa-map-marker-alt"></i> Calzada San Miguel Del Padron, #10206/ 2da y 3ra. Rpto San Juan de los Pinos
+            <br>
+            <i class="fas fa-phone"></i> +5359094266
         </div>
         <div class="socials">
-            <a href="https://wa.me/5359094266" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.instagram.com/tiendalasantiaguera" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/5359094266" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/tiendalasantiaguera" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
     </div>
 </footer>
-
-<!-- MODAL -->
+<!-- MODALES -->
 <div class="modal-wrap" id="productModal">
     <div class="modal-box">
         <button class="close-btn" onclick="closeModal()">&times;</button>
@@ -882,516 +230,290 @@
 
 <!-- ZOOM OVERLAY -->
 <div class="zoom-overlay" id="zoomOverlay" onclick="this.classList.remove('active')">
-    <img id="zoomImg" src="" alt="Zoom">
+    <img id="zoomImg" src="">
 </div>
 
-<!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/5359094266" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-</a>
-
-<!-- ADMIN PANEL -->
-<div class="admin-btn" onclick="toggleAdminPanel()">
-    <i class="fas fa-cog"></i>
-</div>
-<div class="admin-panel" id="adminPanel">
-    <h4><i class="fas fa-tools"></i> Panel de Gestión</h4>
-    <button onclick="refreshProducts()">
-        <i class="fas fa-sync-alt"></i> Actualizar Productos
-    </button>
-    <button onclick="window.location.reload()">
-        <i class="fas fa-redo-alt"></i> Recargar Página
-    </button>
-    <small>
-        <i class="fas fa-info-circle"></i> Los productos se detectan automáticamente desde las carpetas de imágenes.
-    </small>
-</div>
+<a href="https://wa.me/5359094266" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
 <script>
-/* ====================================================================
-   SISTEMA AUTOMÁTICO DE PRODUCTOS - VERSIÓN PROFESIONAL
-   ====================================================================
-   INSTRUCCIONES PARA EL CLIENTE:
-   
-   1. Para AGREGAR un nuevo producto:
-      - Copia la foto a la carpeta correcta:
-        * Sábanas Solas: img/sabanas/SB###.jpg
-        * Juegos de Sábanas: img/sabanas/SBJ###.jpg
-        * Cristalería: img/cristaleria/CR###.jpg
-        * Calzado: img/calzado/CZ###.jpg
-        * Varios: img/varios/VR###.jpg
-      - La página mostrará la foto automáticamente al recargar.
-   
-   2. Para QUITAR un producto:
-      - Elimina la foto de la carpeta.
-   
-   3. Para cambiar la descripción:
-      - Crea un archivo .txt con el mismo nombre (ej: SB001.txt) en la misma carpeta.
-      - Escribe la descripción deseada.
-   
-   4. Para cambiar los colores detectados:
-      - Incluye el color en el nombre del archivo (ej: SB001_azul.jpg)
-      - Colores soportados: blanco, negro, rojo, azul, verde, dorado, morado, rosa
-   ==================================================================== */
+/* 
+   SISTEMA DE GESTIÓN PARA EL CLIENTE:
+   1. Para DESACTIVAR un producto (agotado): Cambia "activo: true" a "activo: false"
+   2. Para AGREGAR un producto nuevo o faltante de la foto en la carpeta, asegúrate de que el "codigo" y el nombre de la foto (imagen) coincidan.
+*/
 
-// ========== CONFIGURACIÓN ==========
-const CATEGORIAS_CONFIG = {
-    'sabanas': {
-        carpeta: 'img/sabanas/',
-        titulo: 'Sábanas Solas',
-        prefijos: ['SB'],
-        descripcionDefault: 'Sábana camera individual de alta calidad.',
-        especificacionesDefault: ['Medidas: 230x180 cm', 'Material: 100% algodón', 'Lavable a máquina']
-    },
-    'juego_sabanas': {
-        carpeta: 'img/sabanas/',
-        titulo: 'Juegos de Sábanas',
-        prefijos: ['SBJ'],
-        descripcionDefault: 'Juego de sábanas completo con funda.',
-        especificacionesDefault: ['Medidas: 230x180 cm', 'Incluye funda a juego', 'Material suave y duradero']
-    },
-    'cristaleria': {
-        carpeta: 'img/cristaleria/',
-        titulo: 'Cristalería',
-        prefijos: ['CR'],
-        descripcionDefault: 'Elegante artículo de cristalería de alta calidad.',
-        especificacionesDefault: ['Material: Cristal de alta calidad', 'Diseño elegante', 'Resistente']
-    },
-    'calzado': {
-        carpeta: 'img/calzado/',
-        titulo: 'Calzado',
-        prefijos: ['CZ'],
-        descripcionDefault: 'Calzado cómodo y duradero para uso diario.',
-        especificacionesDefault: ['Material: Sintético de alta calidad', 'Suela antideslizante', 'Cómodo y ligero']
-    },
-    'varios': {
-        carpeta: 'img/varios/',
-        titulo: 'Varios',
-        prefijos: ['VR'],
-        descripcionDefault: 'Producto versátil para tu hogar.',
-        especificacionesDefault: ['Diseño práctico', 'Alta calidad', 'Ideal para el hogar']
-    }
-};
+const productos = [
+    // --- SÁBANAS SOLAS (SB001 al SB030) ---
+    {codigo:"SB001", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB001.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB002", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB002.jpg", colores:["azul"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB003", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB003.jpg", colores:["rosa"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB004", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB004.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB005", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB005.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB006", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB006.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB007", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB007.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB008", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB008.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB009", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB009.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB010", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB010.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB011", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB011.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB012", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB012.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB013", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB013.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB014", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB014.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB015", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB015.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB016", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB016.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB017", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB017.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB018", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB018.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB019", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB019.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB020", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB020.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB021", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB021.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB022", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB022.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB023", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB023.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB024", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB024.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB025", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB025.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB026", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB026.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB027", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB027.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB028", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB028.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB029", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB029.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
+    {codigo:"SB030", nombre:"Sábana Camera Individual", activo:true, categoria:"sabanas", imagen:"img/sabanas/SB030.jpg", colores:["blanco"], descripcion:"Sábana camera individual de alta calidad.", especificaciones:["Medidas: 230x180", "Material suave", "Fácil lavado"]},
 
-const MAPA_COLORES = {
-    'blanco': ['blanco', 'white', 'bl'],
-    'negro': ['negro', 'black', 'ng'],
-    'rojo': ['rojo', 'red', 'rj'],
-    'azul': ['azul', 'blue', 'az'],
-    'verde': ['verde', 'green', 'vd'],
-    'dorado': ['dorado', 'gold', 'dor', 'amarillo'],
-    'morado': ['morado', 'purple', 'mor'],
-    'rosa': ['rosa', 'pink', 'rs']
-};
+    // --- JUEGOS DE SÁBANAS (SBJ001 al SBJ030) ---
+    {codigo:"SBJ001", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ001.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ002", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ002.jpg", colores:["azul"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ003", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ003.jpg", colores:["rosa"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ004", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ004.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ005", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ005.jpg", colores:["gris"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ006", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ006.jpg", colores:["azul"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ007", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ007.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ008", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ008.jpg", colores:["negro"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ009", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ009.jpg", colores:["rosa"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ010", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ010.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ011", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ011.jpg", colores:["azul"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ012", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ012.jpg", colores:["gris"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ013", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ013.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ014", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ014.jpg", colores:["rosa"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ015", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ015.jpg", colores:["azul"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ016", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ016.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ017", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ017.jpg", colores:["negro"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ018", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ018.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ019", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ019.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ020", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ020.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ021", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ021.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ022", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ022.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ023", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ023.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ024", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ024.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ025", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ025.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ026", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ026.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ027", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ027.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ028", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ028.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ029", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ029.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
+    {codigo:"SBJ030", nombre:"Juego de Sábanas con Funda", activo:true, categoria:"juego_sabanas", imagen:"img/sabanas/SBJ030.jpg", colores:["blanco"], descripcion:"Juego de sábanas con funda de alta calidad.", especificaciones:["Medidas: 230x180", "Incluye funda"]},
 
-// ========== ESTADO GLOBAL ==========
-let productosGlobal = [];
+    // --- CRISTALERÍA ---
+    {codigo:"CR001", nombre:"Juego de Copas de Vino", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR001.jpg", colores:["transparente"], descripcion:"Elegante juego de copas para vino.", especificaciones:[]},
+    {codigo:"CR002", nombre:"Vasos Altos de Agua", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR002.jpg", colores:["transparente"], descripcion:"Set de vasos altos ideales para agua o jugos.", especificaciones:[]},
+    {codigo:"CR003", nombre:"Copas de Champán", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR003.jpg", colores:["transparente"], descripcion:"Copas estilizadas para brindis especiales.", especificaciones:[]},
+    {codigo:"CR004", nombre:"Vasos Bajos Whiskernos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR004.jpg", colores:["transparente"], descripcion:"Vasos bajos robustos, perfectos para licores.", especificaciones:[]},
+    {codigo:"CR005", nombre:"Juego de vasos para whisky", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR005.jpg", colores:["transparente"], descripcion:"Elegante juego de vasos diseñados para whisky.", especificaciones:[]},
+    {codigo:"CR006", nombre:"Juego de 6 vasos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR006.jpg", colores:["transparente"], descripcion:"Set completo de 6 vasos ideales para uso diario.", especificaciones:[]},
+    {codigo:"CR007", nombre:"Platos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR007.jpg", colores:["transparente"], descripcion:"Platos de cristal elegantes y resistentes. Incluye variantes.", especificaciones:[]},
+    {codigo:"CR008", nombre:"Platos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR008.jpg", colores:["transparente"], descripcion:"Platos de cristal elegantes y resistentes.", especificaciones:[]},
+    {codigo:"CR009", nombre:"Juego de vasos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR009.jpg", colores:["transparente"], descripcion:"Juego de vasos clásicos.", especificaciones:[]},
+    {codigo:"CR010", nombre:"Juegos de vasos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR010.jpg", colores:["transparente"], descripcion:"Variedad de juegos de vasos para todas las ocasiones.", especificaciones:[]},
+    {codigo:"CR012", nombre:"Dispensador de jabón líquido", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR012.jpg", colores:["transparente"], descripcion:"Elegante dispensador de cristal para jabón líquido.", especificaciones:[]},
+    {codigo:"CR014", nombre:"Tequilero", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR014.jpg", colores:["transparente"], descripcion:"Vaso tequilero clásico.", especificaciones:[]},
+    {codigo:"CR015", nombre:"Juego de tequilero", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR015.jpg", colores:["transparente"], descripcion:"Set de vasos tequileros para compartir.", especificaciones:[]},
+    {codigo:"CR016", nombre:"Juego de 6 vasos de colores", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR016.jpg", colores:["transparente"], descripcion:"Divertido juego de 6 vasos con detalles en colores.", especificaciones:[]},
+    {codigo:"CR017", nombre:"Tequilero", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR017.jpg", colores:["transparente"], descripcion:"Vaso tequilero de diseño especial.", especificaciones:[]},
+    {codigo:"CR018", nombre:"Juego de jarra con 4 vasos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR018.jpg", colores:["transparente"], descripcion:"Práctico juego que incluye una jarra y 4 vasos a juego.", especificaciones:[]},
+    {codigo:"CR019", nombre:"Juego de jarra con vasos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR019.jpg", colores:["transparente"], descripcion:"Completo set de jarra y vasos para tus bebidas.", especificaciones:[]},
+    {codigo:"CR020", nombre:"Cenicero", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR020.jpg", colores:["transparente"], descripcion:"Cenicero de cristal robusto y elegante.", especificaciones:[]},
+    {codigo:"CR021", nombre:"Juego de vasos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR021.jpg", colores:["transparente"], descripcion:"Juego de vasos de cristal.", especificaciones:[]},
+    {codigo:"CR022", nombre:"Juego de 4 tazas de leche", activo:false, categoria:"cristaleria", imagen:"img/cristaleria/CR022.jpg", colores:["transparente"], descripcion:"Hermoso juego de 4 tazas ideales para leche o café.", especificaciones:[]},
+    {codigo:"CR023", nombre:"Juego de vasos", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR023.jpg", colores:["transparente"], descripcion:"Juego de vasos elegantes.", especificaciones:[]},
+    {codigo:"CR025", nombre:"Tequilero", activo:true, categoria:"cristaleria", imagen:"img/cristaleria/CR025.jpg", colores:["transparente"], descripcion:"Vaso tequilero de alta calidad.", especificaciones:[]},
+
+    // --- CALZADO ---
+    {codigo:"CZ002", nombre:"Calzado Cómodo", activo:true, categoria:"calzado", imagen:"img/calzado/CZ002.jpg", colores:["azul"], descripcion:"Calzado cómodo para uso diario.", especificaciones:[]},
+    {codigo:"CZ003", nombre:"Calzado Cómodo", activo:true, categoria:"calzado", imagen:"img/calzado/CZ003.jpg", colores:["negro"], descripcion:"Calzado cómodo para uso diario.", especificaciones:[]},
+    {codigo:"CZ004", nombre:"Calzado Cómodo", activo:true, categoria:"calzado", imagen:"img/calzado/CZ004.jpg", colores:["rojo"], descripcion:"Calzado cómodo para uso diario.", especificaciones:[]},
+    {codigo:"CZ005", nombre:"Calzado Cómodo", activo:true, categoria:"calzado", imagen:"img/calzado/CZ005.jpg", colores:["blanco"], descripcion:"Calzado cómodo para uso diario.", especificaciones:[]},
+    {codigo:"CZ006", nombre:"Calzado Cómodo", activo:true, categoria:"calzado", imagen:"img/calzado/CZ006.jpg", colores:["negro"], descripcion:"Calzado cómodo para uso diario.", especificaciones:[]},
+    {codigo:"CZ007", nombre:"Calzado Cómodo", activo:true, categoria:"calzado", imagen:"img/calzado/CZ007.jpg", colores:["azul"], descripcion:"Calzado cómodo para uso diario.", especificaciones:[]},
+    {codigo:"CZ008", nombre:"Calzado Cómodo", activo:true, categoria:"calzado", imagen:"img/calzado/CZ008.jpg", colores:["rosa"], descripcion:"Calzado cómodo para uso diario.", especificaciones:[]},
+
+    // --- VARIOS ---
+    {codigo:"VR002", nombre:"Sobrecama con fundas", activo:true, categoria:"varios", imagen:"img/varios/VR002.jpg", colores:["negro"], descripcion:"Elegante sobrecama que incluye fundas.", especificaciones:[]},
+    {codigo:"VR003", nombre:"Juego de pozuelo trae 7", activo:true, categoria:"varios", imagen:"img/varios/VR003.jpg", colores:["blanco"], descripcion:"Set completo de 7 pozuelos.", especificaciones:[]},
+    {codigo:"VR004", nombre:"Juego de 3 pozuelos", activo:true, categoria:"varios", imagen:"img/varios/VR004.jpg", colores:["azul"], descripcion:"Práctico juego de 3 pozuelos.", especificaciones:[]},
+    {codigo:"VR005", nombre:"Set de baño 4 piezas", activo:true, categoria:"varios", imagen:"img/varios/VR005.jpg", colores:["blanco"], descripcion:"Set de accesorios para baño.", especificaciones:[]},
+    {codigo:"VR006", nombre:"Vasos plásticos resistentes", activo:true, categoria:"varios", imagen:"img/varios/VR006.jpg", colores:["rojo"], descripcion:"Vasos de plástico duradero.", especificaciones:[]},
+    {codigo:"VR007", nombre:"Vasos de cerámica", activo:true, categoria:"varios", imagen:"img/varios/VR007.jpg", colores:["blanco"], descripcion:"Vasos de cerámica de alta calidad.", especificaciones:[]},
+    {codigo:"VR008", nombre:"Pomos de silicona", activo:true, categoria:"varios", imagen:"img/varios/VR008.jpg", colores:["negro"], descripcion:"Pomos flexibles de silicona.", especificaciones:[]},
+    {codigo:"VR009", nombre:"Tenis Converse", activo:true, categoria:"varios", imagen:"img/varios/VR009.jpg", colores:["azul"], descripcion:"Clásicos tenis estilo Converse.", especificaciones:[]},
+    {codigo:"VR010", nombre:"Pomos de agua", activo:true, categoria:"varios", imagen:"img/varios/VR010.jpg", colores:["blanco"], descripcion:"Pomos de agua reutilizables.", especificaciones:[]},
+    {codigo:"VR012", nombre:"Bolsitos de piel y tela", activo:true, categoria:"varios", imagen:"img/varios/VR012.jpg", colores:["blanco"], descripcion:"Bolsitos combinados. Incluye variantes.", especificaciones:[]},
+    {codigo:"VR013", nombre:"Termo de café 0.45L", activo:true, categoria:"varios", imagen:"img/varios/VR013.jpg", colores:["negro"], descripcion:"Termo compacto de 0.45L.", especificaciones:[]},
+    {codigo:"VR014", nombre:"Hisopo de baño", activo:true, categoria:"varios", imagen:"img/varios/VR014.jpg", colores:["rosa"], descripcion:"Hisopo de baño con base.", especificaciones:[]},
+    {codigo:"VR015", nombre:"Termo de café 1L", activo:true, categoria:"varios", imagen:"img/varios/VR015.jpg", colores:["blanco"], descripcion:"Termo de gran capacidad.", especificaciones:[]},
+    {codigo:"VR017", nombre:"Especiero giratorio", activo:true, categoria:"varios", imagen:"img/varios/VR017.jpg", colores:["blanco"], descripcion:"Práctico especiero giratorio.", especificaciones:[]},
+    {codigo:"VR018", nombre:"Vasos de cerámica", activo:true, categoria:"varios", imagen:"img/varios/VR018.jpg", colores:["negro"], descripcion:"Vasos de cerámica modernos.", especificaciones:[]},
+    {codigo:"VR020", nombre:"Juego de 3 pozuelos con cucharita", activo:true, categoria:"varios", imagen:"img/varios/VR020.jpg", colores:["blanco"], descripcion:"Set de 3 pozuelos con cucharita.", especificaciones:[]},
+    {codigo:"VR023", nombre:"Pozuelos cuadrados trae 7", activo:true, categoria:"varios", imagen:"img/varios/VR023.jpg", colores:["negro"], descripcion:"Set de 7 pozuelos cuadrados.", especificaciones:[]},
+    {codigo:"VR024", nombre:"Pozuelos circulares trae 7", activo:true, categoria:"varios", imagen:"img/varios/VR024.jpg", colores:["dorado"], descripcion:"Set de 7 pozuelos circulares.", especificaciones:[]},
+    {codigo:"VR026", nombre:"Bolsitos de piel y tela", activo:true, categoria:"varios", imagen:"img/varios/VR026.jpg", colores:["verde"], descripcion:"Variante de bolsitos.", especificaciones:[]},
+    {codigo:"VR027", nombre:"Bolsitos de piel y tela", activo:true, categoria:"varios", imagen:"img/varios/VR027.jpg", colores:["blanco"], descripcion:"Variante de bolsitos.", especificaciones:[]},
+    {codigo:"VR028", nombre:"Pinzas de cocina", activo:true, categoria:"varios", imagen:"img/varios/VR028.jpg", colores:["negro"], descripcion:"Pinzas de cocina prácticas.", especificaciones:[]}
+];
+
 let colorSeleccionado = null;
-let cacheImagenes = null;
 
-// ========== UTILIDADES ==========
-function extraerCodigo(nombreArchivo, prefijos) {
-    const sinExtension = nombreArchivo.replace(/\.(jpg|jpeg|png|gif|webp)$/i, '');
-    for (let prefijo of prefijos) {
-        if (sinExtension.toUpperCase().startsWith(prefijo.toUpperCase())) {
-            return sinExtension.toUpperCase();
-        }
-    }
-    return sinExtension.toUpperCase();
-}
-
-function detectarColores(nombreArchivo) {
-    const colores = new Set();
-    const lowerNombre = nombreArchivo.toLowerCase();
+function renderProducts(lista = productos) {
+    const cats = ['sabanas', 'juego_sabanas', 'cristaleria', 'calzado', 'varios'];
     
-    for (let [color, keywords] of Object.entries(MAPA_COLORES)) {
-        for (let kw of keywords) {
-            if (lowerNombre.includes(kw)) {
-                colores.add(color);
-                break;
-            }
-        }
-    }
-    
-    if (colores.size === 0) {
-        colores.add('blanco');
-    }
-    
-    return Array.from(colores);
-}
-
-async function cargarDescripcionPersonalizada(carpeta, codigo) {
-    try {
-        const url = `${carpeta}${codigo}.txt?t=${Date.now()}`;
-        const response = await fetch(url);
-        if (response.ok) {
-            return await response.text();
-        }
-    } catch (e) {}
-    return null;
-}
-
-async function obtenerListaImagenes(carpeta) {
-    // Para GitHub Pages, necesitamos un archivo manifest.json que liste las imágenes
-    // Este sistema usa un archivo generado automáticamente
-    
-    if (!cacheImagenes) {
-        try {
-            // Intentar cargar desde manifest.json
-            const response = await fetch(`manifest.json?t=${Date.now()}`);
-            if (response.ok) {
-                cacheImagenes = await response.json();
-            } else {
-                // Fallback: intentar cargar desde un archivo de lista predefinido
-                console.warn('No se pudo cargar manifest.json, usando lista predefinida');
-                cacheImagenes = {};
-            }
-        } catch (error) {
-            console.error('Error al cargar lista de imágenes:', error);
-            cacheImagenes = {};
-        }
-    }
-    
-    if (cacheImagenes && cacheImagenes[carpeta]) {
-        return cacheImagenes[carpeta];
-    }
-    
-    return [];
-}
-
-async function escanearCarpeta(categoria, config) {
-    const productosEncontrados = [];
-    const imagenes = await obtenerListaImagenes(config.carpeta);
-    
-    for (let imagen of imagenes) {
-        let pertenece = false;
-        let codigo = '';
-        
-        for (let prefijo of config.prefijos) {
-            if (imagen.toUpperCase().startsWith(prefijo.toUpperCase())) {
-                pertenece = true;
-                codigo = extraerCodigo(imagen, config.prefijos);
-                break;
-            }
-        }
-        
-        if (pertenece) {
-            const descripcionPersonalizada = await cargarDescripcionPersonalizada(config.carpeta, codigo);
-            const colores = detectarColores(imagen);
-            
-            productosEncontrados.push({
-                codigo: codigo,
-                nombre: `${config.titulo} - ${codigo}`,
-                activo: true,
-                categoria: categoria,
-                imagen: config.carpeta + imagen,
-                colores: colores,
-                descripcion: descripcionPersonalizada || config.descripcionDefault,
-                especificaciones: config.especificacionesDefault
-            });
-        }
-    }
-    
-    return productosEncontrados;
-}
-
-async function cargarProductosAutomaticos() {
-    const loader = document.getElementById('loader');
-    if (loader) loader.style.display = 'flex';
-    
-    const todosProductos = [];
-    cacheImagenes = null;
-    
-    for (let [categoria, config] of Object.entries(CATEGORIAS_CONFIG)) {
-        try {
-            const productosCat = await escanearCarpeta(categoria, config);
-            todosProductos.push(...productosCat);
-        } catch (error) {
-            console.error(`Error al escanear ${categoria}:`, error);
-        }
-    }
-    
-    productosGlobal = todosProductos;
-    
-    if (productosGlobal.length === 0) {
-        console.warn('No se encontraron productos. Asegúrate de que las carpetas contengan imágenes con los prefijos correctos.');
-    }
-    
-    renderProducts(productosGlobal);
-    
-    if (loader) {
-        setTimeout(() => {
-            loader.style.display = 'none';
-        }, 500);
-    }
-}
-
-function refreshProducts() {
-    cacheImagenes = null;
-    cargarProductosAutomaticos();
-}
-
-// ========== RENDERIZADO ==========
-function renderProducts(lista) {
-    const categorias = ['sabanas', 'juego_sabanas', 'cristaleria', 'calzado', 'varios'];
-    
-    categorias.forEach(cat => {
-        const grid = document.getElementById(`grid-${cat}`);
-        if (grid) {
+    cats.forEach(c => {
+        const grid = document.getElementById(`grid-${c}`);
+        if(grid) {
             grid.innerHTML = '';
-            const section = document.getElementById(`sec-${cat}`);
-            if (section) section.style.display = 'block';
+            document.getElementById(`sec-${c}`).style.display = 'block';
         }
     });
-    
-    let encontrados = 0;
-    
-    lista.forEach(producto => {
-        if (!producto.activo) return;
-        
-        const grid = document.getElementById(`grid-${producto.categoria}`);
+
+    let encontrados = false;
+
+    lista.forEach(p => {
+        if (!p.activo) return;
+
+        const grid = document.getElementById(`grid-${p.categoria}`);
         if (grid) {
             grid.innerHTML += `
-                <div class="card" data-codigo="${producto.codigo}">
-                    <span class="code-tag">${producto.codigo}</span>
-                    <div class="card-img">
-                        <img src="${producto.imagen}" 
-                             alt="${producto.nombre}"
-                             loading="lazy"
-                             onerror="this.closest('.card')?.remove(); checkEmptySections();">
-                        <button class="card-btn" onclick="openModal('${producto.codigo}')">
-                            <i class="fas fa-eye"></i>
-                        </button>
-                    </div>
-                    <div class="card-info">
-                        <div class="card-cat">${getCategoryName(producto.categoria)}</div>
-                        <div class="card-title">${escapeHtml(producto.nombre)}</div>
-                    </div>
+            <div class="card">
+                <span class="code-tag">${p.codigo}</span>
+                <div class="card-img">
+                    <img src="${p.imagen}" alt="${p.nombre}" onerror="this.closest('.card').remove(); checkEmptySections();">
+                    <button class="card-btn" onclick="openModal('${p.codigo}')">
+                        <i class="fas fa-eye"></i>
+                    </button>
                 </div>
-            `;
-            encontrados++;
+                <div class="card-info">
+                    <div class="card-cat">${getCategoryName(p.categoria)}</div>
+                    <div class="card-title">${p.nombre}</div>
+                </div>
+            </div>`;
+            encontrados = true;
         }
     });
-    
-    categorias.forEach(cat => {
-        const grid = document.getElementById(`grid-${cat}`);
-        if (grid && grid.children.length === 0) {
-            const section = document.getElementById(`sec-${cat}`);
-            if (section) section.style.display = 'none';
-        }
-    });
-    
-    const noResults = document.getElementById('no-results');
-    if (noResults) {
-        noResults.style.display = encontrados === 0 ? 'block' : 'none';
-    }
+
+    checkEmptySections();
+    document.getElementById('no-results').style.display = encontrados ? 'none' : 'block';
 }
 
 function checkEmptySections() {
-    const categorias = ['sabanas', 'juego_sabanas', 'cristaleria', 'calzado', 'varios'];
-    categorias.forEach(cat => {
+    ['sabanas', 'juego_sabanas', 'cristaleria', 'calzado', 'varios'].forEach(cat => {
         const grid = document.getElementById(`grid-${cat}`);
-        const section = document.getElementById(`sec-${cat}`);
-        if (section && grid && grid.children.length === 0) {
-            section.style.display = 'none';
-        } else if (section && grid && grid.children.length > 0) {
-            section.style.display = 'block';
+        if (grid && grid.children.length === 0) {
+            document.getElementById(`sec-${cat}`).style.display = 'none';
         }
     });
 }
 
-function getCategoryName(categoria) {
-    const nombres = {
-        'sabanas': 'Sábanas Solas',
-        'juego_sabanas': 'Juegos de Sábanas',
-        'cristaleria': 'Cristalería',
-        'calzado': 'Calzado',
-        'varios': 'Varios'
-    };
-    return nombres[categoria] || categoria;
-}
-
-function escapeHtml(text) {
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML;
-}
-
-// ========== FILTROS Y BÚSQUEDA ==========
 function filterProducts() {
-    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-    
-    const filtered = productosGlobal.filter(producto => {
-        const matchesSearch = searchTerm === '' || 
-            producto.nombre.toLowerCase().includes(searchTerm) ||
-            producto.descripcion.toLowerCase().includes(searchTerm) ||
-            producto.codigo.toLowerCase().includes(searchTerm);
-        
-        const matchesColor = !colorSeleccionado || 
-            producto.colores.includes(colorSeleccionado);
-        
-        return matchesSearch && matchesColor;
+    const term = document.getElementById('searchInput').value.toLowerCase();
+    const filtered = productos.filter(p => {
+        const matchesTerm = p.nombre.toLowerCase().includes(term) || p.descripcion.toLowerCase().includes(term) || p.codigo.toLowerCase().includes(term);
+        const matchesColor = colorSeleccionado ? p.colores.includes(colorSeleccionado) : true;
+        return matchesTerm && matchesColor;
     });
-    
     renderProducts(filtered);
 }
 
-function filterColor(color, element) {
-    document.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'));
-    
+function filterColor(color, btn) {
+    document.querySelectorAll('.dot').forEach(d => d.classList.remove('active'));
     if (colorSeleccionado === color) {
         colorSeleccionado = null;
     } else {
         colorSeleccionado = color;
-        element.classList.add('active');
+        btn.classList.add('active');
     }
-    
     filterProducts();
 }
 
 function resetFilters() {
     document.getElementById('searchInput').value = '';
     colorSeleccionado = null;
-    document.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'));
-    renderProducts(productosGlobal);
+    document.querySelectorAll('.dot').forEach(d => d.classList.remove('active'));
+    renderProducts(productos);
 }
 
-// ========== MODAL Y ZOOM ==========
-function openModal(codigo) {
-    const producto = productosGlobal.find(p => p.codigo === codigo);
-    if (!producto) return;
-    
-    let specsHtml = '';
-    if (producto.especificaciones && producto.especificaciones.length > 0) {
-        specsHtml = `
-            <div style="margin-top: 20px; text-align: left;">
-                <strong style="display: block; margin-bottom: 8px;">📋 Especificaciones:</strong>
-                <ul style="margin: 0; padding-left: 20px; color: #5e5e66;">
-                    ${producto.especificaciones.map(e => `<li style="margin-bottom: 4px;">${escapeHtml(e)}</li>`).join('')}
-                </ul>
-            </div>
-        `;
-    }
-    
-    const modalContent = document.getElementById('modalContent');
-    if (modalContent) {
-        modalContent.innerHTML = `
-            <img src="${producto.imagen}" 
-                 class="modal-img" 
-                 onclick="openZoom('${producto.imagen}')" 
-                 alt="${producto.nombre}"
-                 style="cursor: pointer;">
-            <h2 style="font-size: 24px; margin-bottom: 8px;">${escapeHtml(producto.nombre)}</h2>
-            <div style="background: var(--gray-bg); display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 16px; font-family: monospace;">
-                CÓDIGO: ${producto.codigo}
-            </div>
-            <p style="color: #5e5e66; line-height: 1.6;">${escapeHtml(producto.descripcion)}</p>
-            ${specsHtml}
-            <button onclick="sendWhatsapp('${producto.codigo}', '${producto.nombre}')" 
-                    style="background: #25d366; color: #fff; border: none; padding: 14px 24px; border-radius: 40px; font-size: 16px; cursor: pointer; font-weight: 600; width: 100%; margin-top: 24px; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-            </button>
-        `;
-    }
-    
-    const modal = document.getElementById('productModal');
-    if (modal) modal.classList.add('active');
-}
-
-function openZoom(src) {
-    const zoomOverlay = document.getElementById('zoomOverlay');
-    const zoomImg = document.getElementById('zoomImg');
-    if (zoomImg) zoomImg.src = src;
-    if (zoomOverlay) zoomOverlay.classList.add('active');
-}
-
-function closeModal() {
-    const modal = document.getElementById('productModal');
-    if (modal) modal.classList.remove('active');
-}
-
-function sendWhatsapp(codigo, nombre) {
-    const mensaje = `Hola, me interesa el producto: ${nombre} (Código: ${codigo})`;
-    window.open(`https://wa.me/5359094266?text=${encodeURIComponent(mensaje)}`, '_blank');
-}
-
-// ========== UI HELPERS ==========
 function scrollToId(id) {
-    const element = document.getElementById(id);
-    if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const el = document.getElementById(id);
+    if(el) {
+        el.scrollIntoView({behavior:'smooth'});
+        document.getElementById('navMenu').classList.remove('active');
     }
-    const menu = document.getElementById('navMenu');
-    if (menu) menu.classList.remove('active');
 }
 
 function toggleMenu() {
-    const menu = document.getElementById('navMenu');
-    if (menu) menu.classList.toggle('active');
+    document.getElementById('navMenu').classList.toggle('active');
 }
 
-function toggleAdminPanel() {
-    const panel = document.getElementById('adminPanel');
-    if (panel) panel.classList.toggle('active');
+function getCategoryName(c){return{sabanas:'Sábanas Solas',juego_sabanas:'Juegos de Sábanas',cristaleria:'Cristalería',calzado:'Calzado',varios:'Varios'}[c]||c}
+
+function openModal(codigo) {
+    const p = productos.find(x => x.codigo === codigo);
+    if(!p) return;
+    
+    let specsHtml = '';
+    if(p.especificaciones && p.especificaciones.length > 0) {
+        specsHtml = `<div style="margin-top:15px; font-size:13px; color:#555;">
+            <strong>Detalles:</strong><br>
+            ${p.especificaciones.map(e => `• ${e}`).join('<br>')}
+        </div>`;
+    }
+
+    document.getElementById('modalContent').innerHTML = `
+        <img src="${p.imagen}" class="modal-img" onclick="openZoom('${p.imagen}')" title="Clic para ampliar">
+        <h2 style="font-size:22px;margin-bottom:10px">${p.nombre}</h2>
+        <div style="background:#f0f0f0;display:inline-block;padding:5px 10px;border-radius:5px;font-weight:600;margin-bottom:15px;color:#333">CÓDIGO: ${p.codigo}</div>
+        <p style="color:#666;line-height:1.6">${p.descripcion}</p>
+        ${specsHtml}
+        <br>
+        <button onclick="sendWhatsapp('${p.codigo}', '${p.nombre}')" 
+            style="background:#25d366;color:#fff;border:none;padding:12px 30px;border-radius:25px;font-size:16px;cursor:pointer;font-weight:600;width:100%;margin-top:20px;">
+            <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+        </button>
+    `;
+    document.querySelector('.modal-wrap').classList.add('active');
 }
 
-// ========== HERO SLIDESHOW ==========
+function openZoom(src) {
+    const overlay = document.getElementById('zoomOverlay');
+    document.getElementById('zoomImg').src = src;
+    overlay.classList.add('active');
+}
+
+function closeModal() {
+    document.querySelector('.modal-wrap').classList.remove('active');
+}
+
+function sendWhatsapp(code, name) {
+    window.open(`https://wa.me/5359094266?text=Hola, me interesa el producto: ${name} (Código: ${code})`, '_blank');
+}
+
 let slideIndex = 0;
-
 function showSlides() {
     const slides = document.querySelectorAll('.hero-slide');
-    if (slides.length === 0) return;
-    
-    slides.forEach(slide => slide.classList.remove('active'));
-    slideIndex = (slideIndex + 1) % slides.length;
-    slides[slideIndex].classList.add('active');
-    
-    setTimeout(showSlides, 4000);
+    if(slides.length === 0) return;
+    slides.forEach(s => s.classList.remove('active'));
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].classList.add('active');
+    setTimeout(showSlides, 4000); 
 }
 
-// ========== INICIALIZACIÓN ==========
-document.addEventListener('DOMContentLoaded', function() {
-    // Configurar eventos de color
-    document.querySelectorAll('.dot').forEach(dot => {
-        const color = dot.getAttribute('data-color');
-        if (color) {
-            dot.addEventListener('click', () => filterColor(color, dot));
-        }
-    });
-    
-    // Configurar búsqueda con Enter
-    const searchInput = document.getElementById('searchInput');
-    if (searchInput) {
-        searchInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') filterProducts();
-        });
-    }
-    
-    // Cargar productos
-    cargarProductosAutomaticos();
-    
-    // Iniciar slideshow
-    setTimeout(showSlides, 1000);
-    
-    // Ocultar loader después de un tiempo máximo
-    setTimeout(() => {
-        const loader = document.getElementById('loader');
-        if (loader) loader.style.display = 'none';
-    }, 3000);
-});
-
-// Exponer funciones globales
-window.filterProducts = filterProducts;
-window.filterColor = filterColor;
-window.resetFilters = resetFilters;
-window.openModal = openModal;
-window.openZoom = openZoom;
-window.closeModal = closeModal;
-window.sendWhatsapp = sendWhatsapp;
-window.scrollToId = scrollToId;
-window.toggleMenu = toggleMenu;
-window.toggleAdminPanel = toggleAdminPanel;
-window.refreshProducts = refreshProducts;
+window.onload = function() {
+    renderProducts();
+    showSlides();
+    document.getElementById('loader').style.display = 'none';
+};
 </script>
 </body>
 </html>
